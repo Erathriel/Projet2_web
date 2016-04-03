@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS typeMangas (
   libelle varchar(50) DEFAULT NULL,
   PRIMARY KEY (id)
 )  DEFAULT CHARSET=utf8;
+
 -- Contenu de la table typeproduits
 -- INSERT INTO typeProduits (id, libelle) VALUES
 -- (1, 'type 1'),

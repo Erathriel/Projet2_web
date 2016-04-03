@@ -1,0 +1,9 @@
+Geoffrey :
+	- Ajouter des mangas
+	- Modifier des mangas
+	- Supprimer des mangas
+
+Cedric :
+	- Afficher le panier
+	- Afficher les mangas
+	
