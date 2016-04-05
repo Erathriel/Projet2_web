@@ -5,7 +5,7 @@ namespace App\Model;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Silex\Application;
 
-class ProduitModel {
+class MangaModel {
 
     private $db;
 
@@ -13,70 +13,66 @@ class ProduitModel {
         $this->db = $app['db'];
     }
     // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/query-builder.html#join-clauses
-    public function getAllProduits() {
-//        $sql = "SELECT p.id, t.libelle, p.nom, p.prix, p.photo
-//            FROM produits as p,typeProduits as t
-//            WHERE p.typeProduit_id=t.id ORDER BY p.nom;";
-//        $req = $this->db->query($sql);
-//        return $req->fetchAll();
+    public function getAllMangas() {
+
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('p.id', 't.libelle', 'p.nom', 'p.prix', 'p.photo')
-            ->from('produits', 'p')
-            ->innerJoin('p', 'typeProduits', 't', 'p.typeProduit_id=t.id')
-            ->addOrderBy('p.nom', 'ASC');
+            ->select('m.id', 't.libelle', 'm.nom', 'm.prix', 'm.photo')
+            ->from('mangas', 'm')
+            ->innerJoin('m', 'typeMangas', 't', 'm.typeManga_id=t.id')
+            ->addOrderBy('m.nom', 'ASC');
         return $queryBuilder->execute()->fetchAll();
 
     }
 
-    public function insertProduit($donnees) {
+    public function insertManga($donnees) {
         $queryBuilder = new QueryBuilder($this->db);
-        $queryBuilder->insert('produits')
+        $queryBuilder->insert('mangas')
             ->values([
                 'nom' => '?',
-                'typeProduit_id' => '?',
+                'typeManga_id' => '?',
                 'prix' => '?',
                 'photo' => '?'
             ])
             ->setParameter(0, $donnees['nom'])
-            ->setParameter(1, $donnees['typeProduit_id'])
+            ->setParameter(1, $donnees['typeManga_id'])
             ->setParameter(2, $donnees['prix'])
             ->setParameter(3, $donnees['photo'])
         ;
         return $queryBuilder->execute();
     }
 
-    function getProduit($id) {
+    function getManga($id) {
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('id', 'typeProduit_id', 'nom', 'prix', 'photo')
-            ->from('produits')
+            ->select('id', 'typeManga_id', 'nom', 'prix', 'photo')
+            ->from('mangas')
             ->where('id= :id')
             ->setParameter('id', $id);
         return $queryBuilder->execute()->fetch();
     }
 
-    public function updateProduit($donnees) {
+    public function updateManga($donnees) {
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->update('produits')
+            ->update('mangas')
             ->set('nom', '?')
-            ->set('typeProduit_id','?')
+            ->set('typeManga_id','?')
             ->set('prix','?')
             ->set('photo','?')
             ->where('id= ?')
             ->setParameter(0, $donnees['nom'])
-            ->setParameter(1, $donnees['typeProduit_id'])
+            ->setParameter(1, $donnees['typeManga_id'])
             ->setParameter(2, $donnees['prix'])
             ->setParameter(3, $donnees['photo'])
             ->setParameter(4, $donnees['id']);
         return $queryBuilder->execute();
     }
 
-    public function deleteProduit($id) {
+    public function deleteManga($id) {
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->delete('produits')
+            ->delete('mangas')
             ->where('id = :id')
             ->setParameter('id',(int)$id)
         ;

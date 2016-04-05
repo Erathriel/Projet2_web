@@ -5,7 +5,7 @@ namespace App\Model;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Silex\Application;
 
-class TypeProduitModel {
+class TypeMangaModel {
 
     private $db;
 
@@ -14,12 +14,12 @@ class TypeProduitModel {
     }
 
 
-    public function getAllTypeProduits() {
+    public function getAllTypeMangas() {
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('p.id', 'p.libelle')
-            ->from('typeProduits', 'p')
-            ->addOrderBy('p.libelle', 'ASC');
+            ->select('t.id', 't.libelle')
+            ->from('typeMangas', 't')
+            ->addOrderBy('t.libelle', 'ASC');
         return $queryBuilder->execute()->fetchAll();
     }
 }
