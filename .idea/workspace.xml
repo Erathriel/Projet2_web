@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e5b5e4c-fcf1-4e2f-b9c0-8a06252acb61" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/S3projet2_v16_1.sql" afterPath="$PROJECT_DIR$/S3projet2_v16_1.sql" />
     </list>
     <ignored path="Projet2_web.iws" />
@@ -136,8 +135,8 @@
           <file leaf-file-name="S3projet2_v16_1.sql" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/S3projet2_v16_1.sql">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="2.0209582">
-                  <caret line="90" column="75" selection-start-line="90" selection-start-column="75" selection-end-line="90" selection-end-column="75" />
+                <state vertical-scroll-proportion="0.6961078">
+                  <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
                   <folding />
                 </state>
               </provider>
@@ -614,8 +613,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/S3projet2_v16_1.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0209582">
-          <caret line="90" column="75" selection-start-line="90" selection-start-column="75" selection-end-line="90" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.6961078">
+          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
           <folding />
         </state>
       </provider>
