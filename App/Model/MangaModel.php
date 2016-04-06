@@ -21,6 +21,7 @@ class MangaModel {
             ->from('mangas', 'm')
             ->innerJoin('m', 'typeMangas', 't', 'm.typeManga_id=t.id')
             ->addOrderBy('m.id', 'ASC');
+        //order by type && nom si id non affichée
         return $queryBuilder->execute()->fetchAll();
 
     }

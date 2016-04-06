@@ -60,8 +60,14 @@ INSERT INTO mangas (id,typeManga_id,nom,nbEpisode,prix,photo,dispo,stock) VALUES
 (2 ,1,'Overlord','12','10','overlord.jpg',3,5),
 (3 ,1, 'Full metal alchemist','50','60','fma.jpg',3,2),
 (4 ,1,'GREAT TEACHER ONIZUKA','72','50','gto.jpg',3,10),
-(5 ,1, 'Claymore','24','20','claymore.jpg',3,10);
-
+(5 ,1, 'Claymore','24','20','claymore.jpg',3,10),
+(6,1,'Nisekoi','24','30','nisekoi.jpg',3,10),
+(7,2,'Nisekoi OVA','3','2','nisekoiOVA.jpg',3,10),
+(8,2,'Nodame cantabile','3','5','nc.jpg',3,10),
+(9,2,'Ajin','2','10','ajin.jpg',3,10),
+(10,3,'Ghost in the shell','1','15','gits.jpg',3,10),
+(11,3,'Ghost in the shell 2','1','15','gits2.jpg',3,10),
+(12,3,'The empire of corpse','1','10','cempire.jpg',3,10);
 
 -- --------------------------------------------------------
 -- Structure de la table user
@@ -122,6 +128,7 @@ CREATE TABLE IF NOT EXISTS paniers (
   CONSTRAINT fk_paniers_commandes FOREIGN KEY (commande_id) REFERENCES commandes (id)
 ) DEFAULT CHARSET=utf8 ;
 
+
 /****************************************
 *
 *
@@ -133,13 +140,14 @@ CREATE TABLE IF NOT EXISTS paniers (
  ***************************************/
 
 
+/*
 CREATE TABLE IF NOT EXISTS genre (
   id int(10) NO NULL AUTO_INCREMENT,
   libelle varchar(40) NOT NULL,
   PRIMARY KEY(id)
 )DEFAULT CHARSET=utf8 ;
 
-/*
+
 INSERT INTO genre (id,libelle) VALUES
 (1,'Action'),
 (2,'Mystery'),
@@ -147,7 +155,7 @@ INSERT INTO genre (id,libelle) VALUES
 (4,'Fantasy'),
 (5,'Magic'),
 (6,'Thriller');
-*/
+
 
 CREATE TABLE IF NOT EXISTS mangaDuGenre (
   id int(10) NOT NULL AUTO_INCREMENT,
@@ -157,10 +165,11 @@ CREATE TABLE IF NOT EXISTS mangaDuGenre (
   FOREIGN KEY(id_manga) REFERENCES manga(id)
   FOREIGN KEY(id_genre) REFERENCES genre(id)
 );
-/*
+
 INSERT INTO mangaDuGenre(id,id_manga,id_genre) VALUES
 (null,1,6),
 (null,1,2);
 */
+
 
 

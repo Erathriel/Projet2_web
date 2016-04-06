@@ -56,6 +56,7 @@ $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->mount("/", new App\Controller\IndexController());
 $app->mount("/manga", new App\Controller\MangaController($app));
 $app->mount("/connexion", new App\Controller\UserController($app));
+$app->mount("/panier", new App\Controller\PanierController($app));
 
 //On lance l'application
 $app->run();
