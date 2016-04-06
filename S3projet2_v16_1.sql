@@ -29,7 +29,7 @@ INSERT INTO etats (id, libelle) VALUES
 (2, 'Expedier');
 
 -- --------------------------------------------------------
--- Structure de la table mangas ( anciennement produits )
+-- Structure de la table mangas ( anciennement produits ) !
 
 CREATE TABLE IF NOT EXISTS mangas (
   id int(10) NOT NULL AUTO_INCREMENT,
