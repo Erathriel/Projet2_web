@@ -17,10 +17,10 @@ class MangaModel {
 
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('m.id', 't.libelle', 'm.nom', 'm.prix', 'm.photo', 'm.dispo', 'm.stock')
+            ->select('m.id', 't.libelle', 'm.nom','m.nbEpisode', 'm.prix', 'm.photo', 'm.dispo', 'm.stock')
             ->from('mangas', 'm')
             ->innerJoin('m', 'typeMangas', 't', 'm.typeManga_id=t.id')
-            ->addOrderBy('m.nom', 'ASC');
+            ->addOrderBy('m.id', 'ASC');
         return $queryBuilder->execute()->fetchAll();
 
     }
@@ -31,6 +31,7 @@ class MangaModel {
             ->values([
                 'nom' => '?',
                 'typeManga_id' => '?',
+                'nbEpisode' =>'?',
                 'prix' => '?',
                 'photo' => '?',
                 'dispo' => '?',
@@ -38,10 +39,11 @@ class MangaModel {
             ])
             ->setParameter(0, $donnees['nom'])
             ->setParameter(1, $donnees['typeManga_id'])
-            ->setParameter(2, $donnees['prix'])
-            ->setParameter(3, $donnees['photo'])
-            ->setParameter(4, $donnees['dispo'])
-            ->setParameter(5, $donnees['stock'])
+            ->setParameter(2, $donnees['nbEpisode'])
+            ->setParameter(3, $donnees['prix'])
+            ->setParameter(4, $donnees['photo'])
+            ->setParameter(5, $donnees['dispo'])
+            ->setParameter(6, $donnees['stock'])
         ;
         return $queryBuilder->execute();
     }
@@ -49,7 +51,7 @@ class MangaModel {
     function getManga($id) {
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('id', 'typeManga_id', 'nom', 'prix', 'photo','dispo','sotck')
+            ->select('id', 'typeManga_id', 'nom','nbEpisode', 'prix', 'photo','dispo','sotck')
             ->from('mangas')
             ->where('id= :id')
             ->setParameter('id', $id);
@@ -62,6 +64,7 @@ class MangaModel {
             ->update('mangas')
             ->set('nom', '?')
             ->set('typeManga_id','?')
+            ->set('nbEpisode','?')
             ->set('prix','?')
             ->set('photo','?')
             ->set('dispo',' ?')
@@ -69,11 +72,12 @@ class MangaModel {
             ->where('id= ?')
             ->setParameter(0, $donnees['nom'])
             ->setParameter(1, $donnees['typeManga_id'])
-            ->setParameter(2, $donnees['prix'])
-            ->setParameter(3, $donnees['photo'])
-            ->setParameter(4, $donnees['dispo'])
-            ->setParameter(5, $donnees['stock'])
-            ->setParameter(6, $donnees['id']);
+            ->setParameter(2, $donnees['nbEpisode'])
+            ->setParameter(3, $donnees['prix'])
+            ->setParameter(4, $donnees['photo'])
+            ->setParameter(5, $donnees['dispo'])
+            ->setParameter(6, $donnees['stock'])
+            ->setParameter(7, $donnees['id']);
         return $queryBuilder->execute();
     }
 

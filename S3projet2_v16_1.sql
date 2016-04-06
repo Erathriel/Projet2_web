@@ -1,4 +1,4 @@
-DROP TABLE  IF EXISTS paniers,commandes, produits, users, typeProduits, etats;
+DROP TABLE  IF EXISTS paniers,commandes, mangas, users, typeMangas, etats;
 
 -- --------------------------------------------------------
 -- Structure de la table typeMangas (anciennement typeproduits )
@@ -14,6 +14,11 @@ CREATE TABLE IF NOT EXISTS typeMangas (
 -- (1, 'type 1'),
 -- (2, 'type 2'),
 -- (3, 'type 3');
+
+INSERT INTO typeMangas (id, libelle) VALUES
+(1, 'TV'),
+(2, 'OVA'),
+(3, 'Movie');
 
 -- --------------------------------------------------------
 -- Structure de la table etats
@@ -36,6 +41,7 @@ CREATE TABLE IF NOT EXISTS mangas (
   typeManga_id int(10) DEFAULT NULL,
   nom varchar(50) DEFAULT NULL,
 --  descr text DEFAULT NULL,
+  nbEpisode int(10) DEFAULT NULL,
   prix float(6,2) DEFAULT NULL,
   photo varchar(50) DEFAULT NULL,
   dispo tinyint(4) NOT NULL,
@@ -48,6 +54,13 @@ CREATE TABLE IF NOT EXISTS mangas (
 -- (1,1, 'produit 1','100','imageProduit.jpeg',1,5),
 -- (2,1, 'produit 2','5.5','imageProduit.jpeg',1,4),
 -- (3,2, 'produit 3','8.5','imageProduit.jpeg',1,10);
+
+INSERT INTO mangas (id,typeManga_id,nom,nbEpisode,prix,photo,dispo,stock) VALUES
+(1 ,1, 'Death note','37','40','dn2.jpg',3,10),
+(2 ,1,'Overlord','12','10','overlord.jpg',3,5),
+(3 ,1, 'Full metal alchemist','50','60','fma.jpg',3,2),
+(4 ,1,'GREAT TEACHER ONIZUKA','72','50','gto.jpg',3,10),
+(5 ,1, 'Claymore','24','20','claymore.jpg',3,10);
 
 
 -- --------------------------------------------------------
@@ -108,5 +121,46 @@ CREATE TABLE IF NOT EXISTS paniers (
   CONSTRAINT fk_paniers_mangas FOREIGN KEY (manga_id) REFERENCES mangas (id),
   CONSTRAINT fk_paniers_commandes FOREIGN KEY (commande_id) REFERENCES commandes (id)
 ) DEFAULT CHARSET=utf8 ;
+
+/****************************************
+*
+*
+*
+*        GENRE
+*
+*
+*
+ ***************************************/
+
+
+CREATE TABLE IF NOT EXISTS genre (
+  id int(10) NO NULL AUTO_INCREMENT,
+  libelle varchar(40) NOT NULL,
+  PRIMARY KEY(id)
+)DEFAULT CHARSET=utf8 ;
+
+/*
+INSERT INTO genre (id,libelle) VALUES
+(1,'Action'),
+(2,'Mystery'),
+(3,'Adventure'),
+(4,'Fantasy'),
+(5,'Magic'),
+(6,'Thriller');
+*/
+
+CREATE TABLE IF NOT EXISTS mangaDuGenre (
+  id int(10) NOT NULL AUTO_INCREMENT,
+  id_manga int(10) NOT NULL,
+  id_genre int(10) NOT NULL,
+  PRIMARY KEY(id),
+  FOREIGN KEY(id_manga) REFERENCES manga(id)
+  FOREIGN KEY(id_genre) REFERENCES genre(id)
+);
+/*
+INSERT INTO mangaDuGenre(id,id_manga,id_genre) VALUES
+(null,1,6),
+(null,1,2);
+*/
 
 

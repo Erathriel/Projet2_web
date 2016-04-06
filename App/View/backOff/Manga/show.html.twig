@@ -8,7 +8,7 @@
 		<table>
 			<caption>Recapitulatifs des mangas (avec twig)</caption>
 			<thead>
-			<tr><th>nom</th><th>id</th><th>type</th><th>prix</th><th>nom photo</th><th>photo</th><th>dispo</th>
+			<tr><th>nom</th><th>id</th><th>nombre d'épisode</th><th>type</th><th>prix</th><th>photo</th><th>dispo</th>
 				{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
 					<th>stock</th>
 					<th>opération</th>
@@ -19,12 +19,12 @@
 			{% for manga in data if data is not empty %}
 
 				<tr>
-					<td>{{manga.nom}}</td><td>{{manga.id}}</td><td>{{manga.libelle}}</td><td>{{manga.prix}}</td><td>
-						{{manga.photo}}</td><td>
-						<img style="width:40px;height:40px" src="{{asset('images/')}}{{manga.photo}}" alt="image de {{manga.libelle}}" >
+					<td>{{manga.nom}}</td><td>{{manga.id}}</td><td>{{ manga.nbEpisode }}</td><td>{{manga.libelle}}</td><td>{{manga.prix}}€</td>
+					<td>
+						<img style="width:110px;height:120px" src="{{asset('images/')}}{{manga.photo}}" alt="image de {{manga.libelle}}" >
 					</td>
-					{% if manga.dispo < 10 %}
-						<td>{{ Manga.dispo }}</td>
+					{% if manga.stock < manga.dispo %}
+						<td>{{ manga.dispo }}</td>
 					{% else %}
 						<td>Disponible</td>
 					{% endif %}
