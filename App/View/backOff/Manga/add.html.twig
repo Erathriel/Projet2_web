@@ -11,34 +11,46 @@
                 {% endif %}
             </label>
             <label>Type :
-                <select name="typeProduit_id">
-                    {% if  donnees.typeProduit_id is not defined or donnees.typeProduit_id is empty   %}
-                        <option value="">Veuillez sélectionner un produit</option>
+                <select name="typeManga_id">
+                    {% if  donnees.typeManga_id is not defined or donnees.typeManga_id is empty   %}
+                        <option value="">Veuillez sélectionner un type de manga</option>
                     {% endif %}
-                    {% for typeProduit in typeProduits %}
-                        <option value="{{ typeProduit.id }}"
-                                {% if donnees.typeProduit_id is defined and typeProduit.id == donnees.typeProduit_id %}selected{% endif %}>
-                            {{ typeProduit.libelle }}
+                    {% for typeManga in typeMangas %}
+                        <option value="{{ typeManga.id }}"
+                                {% if donnees.typeManga_id is defined and typeManga.id == donnees.typeManga_id %}selected{% endif %}>
+                            {{ typeManga.libelle }}
                         </option>
                     {% endfor %}
                     </select>
-                {% if erreurs.typeProduit_id is defined %}
-                    <small class="error">{{erreurs.typeProduit_id}}</small>
+                {% if erreurs.typeManga_id is defined %}
+                    <small class="error">{{erreurs.typeManga_id}}</small>
                 {% endif %}
             </label>
-            <label>Prix
+            <label>Prix :
                 <input name="prix"  type="text"  size="18" 	value="{{donnees.prix|default('')}}"/>
                 {% if erreurs.prix is defined %}
                     <small class="error">{{erreurs.prix}}</small>
                 {% endif %}
             </label>
-            <label>Photo
+            <label>Photo :
                 <input name="photo"  type="text"  size="18" value="{{donnees.photo|default('')}}"/>
                 {% if erreurs.photo is defined %}
                     <small class="error">{{erreurs.photo}}</small>
                 {% endif %}
             </label>
-            <input type="submit" name="creerProduit" value="créer" />
+            <label>Dispo :
+                <input name="dispo"  type="text"  size="18" 	value="{{donnees.dispo|default('')}}"/>
+                {% if erreurs.dispo is defined %}
+                    <small class="error">{{erreurs.dispo}}</small>
+                {% endif %}
+            </label>
+            <label>Stock:
+                <input name="stock"  type="text"  size="18" 	value="{{donnees.stock|default('')}}"/>
+                {% if erreurs.stock is defined %}
+                    <small class="error">{{erreurs.stock}}</small>
+                {% endif %}
+            </label>
+            <input type="submit" name="creerManga" value="créer" />
         </fieldset>
     </div>
 </form>

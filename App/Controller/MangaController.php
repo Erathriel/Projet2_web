@@ -47,12 +47,16 @@ class MangaController implements ControllerProviderInterface
                 'nom' => htmlspecialchars($_POST['nom']),                    // echapper les entrées
                 'typeManga_id' => htmlspecialchars($app['request']->get('typeManga_id')),
                 'prix' => htmlspecialchars($req->get('prix')),
-                'photo' => $app->escape($req->get('photo'))  //$req->query->get('photo')
+                'photo' => $app->escape($req->get('photo')),  //$req->query->get('photo')
+                'dispo' => htmlspecialchars($_POST['dispo']),
+                'stock' => htmlspecialchars($_POST['stock'])
             ];
             if ((! preg_match("/^[A-Za-z ]{2,}/",$donnees['nom']))) $erreurs['nom']='nom composé de 2 lettres minimum';
             if(! is_numeric($donnees['typeManga_id']))$erreurs['typeManga_id']='veuillez saisir une valeur';
             if(! is_numeric($donnees['prix']))$erreurs['prix']='saisir une valeur numérique';
             if (! preg_match("/[A-Za-z0-9]{2,}.(jpeg|jpg|png)/",$donnees['photo'])) $erreurs['photo']='nom de fichier incorrect (extension jpeg , jpg ou png)';
+            if(! is_numeric($donnees['dispo']))$erreurs['dispo']='saisir une valeur numérique';
+            if(! is_numeric($donnees['stock']))$erreurs['stock']='saisir une valeur numérique';
 
             if(! empty($erreurs))
             {
