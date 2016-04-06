@@ -1,0 +1,27 @@
+{% extends "layout.html.twig" %}
+{% block contenu %}
+	<div class="row">
+	{#
+		{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
+			<a href="{{ path('manga.add') }}"> Ajouter un manga </a>
+		{% endif %}
+	#}
+		<table>
+			<caption>Recapitulatifs du panier</caption>
+			<thead>
+			<tr><th>nom du manga</th><th>quantité </th><th>prix</th><th>date d'ajout</th>
+			</thead>
+			<tbody>
+			{#
+			{% for panier in data if data is not empty %}
+				<tr>
+					<td>{{panier.nom}}</td><td>{{panier.quantite}}</td><td>{{ panier.prix }}</td><td>{{panier.dateAjoutPanier}}</td>
+
+				</tr>
+			{% endfor %}
+			#}
+			<tbody>
+		</table>
+	</div>
+{% endblock %}
+
