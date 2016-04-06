@@ -17,7 +17,7 @@ class MangaModel {
 
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('m.id', 't.libelle', 'm.nom', 'm.prix', 'm.photo')
+            ->select('m.id', 't.libelle', 'm.nom', 'm.prix', 'm.photo', 'm.dispo', 'm.stock')
             ->from('mangas', 'm')
             ->innerJoin('m', 'typeMangas', 't', 'm.typeManga_id=t.id')
             ->addOrderBy('m.nom', 'ASC');
@@ -32,12 +32,16 @@ class MangaModel {
                 'nom' => '?',
                 'typeManga_id' => '?',
                 'prix' => '?',
-                'photo' => '?'
+                'photo' => '?',
+                'dispo' => '?',
+                'stock' => '?'
             ])
             ->setParameter(0, $donnees['nom'])
             ->setParameter(1, $donnees['typeManga_id'])
             ->setParameter(2, $donnees['prix'])
             ->setParameter(3, $donnees['photo'])
+            ->setParameter(4, $donnees['dispo'])
+            ->setParameter(5, $donnees['stock'])
         ;
         return $queryBuilder->execute();
     }
@@ -45,7 +49,7 @@ class MangaModel {
     function getManga($id) {
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('id', 'typeManga_id', 'nom', 'prix', 'photo')
+            ->select('id', 'typeManga_id', 'nom', 'prix', 'photo','dispo','sotck')
             ->from('mangas')
             ->where('id= :id')
             ->setParameter('id', $id);
@@ -60,12 +64,16 @@ class MangaModel {
             ->set('typeManga_id','?')
             ->set('prix','?')
             ->set('photo','?')
+            ->set('dispo',' ?')
+            ->set('stock', '?')
             ->where('id= ?')
             ->setParameter(0, $donnees['nom'])
             ->setParameter(1, $donnees['typeManga_id'])
             ->setParameter(2, $donnees['prix'])
             ->setParameter(3, $donnees['photo'])
-            ->setParameter(4, $donnees['id']);
+            ->setParameter(4, $donnees['dispo'])
+            ->setParameter(5, $donnees['stock'])
+            ->setParameter(6, $donnees['id']);
         return $queryBuilder->execute();
     }
 

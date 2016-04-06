@@ -88,7 +88,8 @@ CREATE TABLE IF NOT EXISTS commandes (
   etat_id int(11) NOT NULL,
   PRIMARY KEY (id),
   CONSTRAINT fk_commandes_users FOREIGN KEY (user_id) REFERENCES users (id),
-  CONSTRAINT fk_commandes_etats FOREIGN KEY (etat_id) REFERENCES etats (id)
+  CONSTRAINT fk_commandes_etats FOREIGN KEY (etat_id) REFERENCES etats (id),
+  CONSTRAINT fk_commandes_paniers FOREIGN KEY (prix) REFERENCES paniers (prix)
 ) DEFAULT CHARSET=utf8 ;
 
 
@@ -106,7 +107,8 @@ CREATE TABLE IF NOT EXISTS paniers (
   PRIMARY KEY (id),
   CONSTRAINT fk_paniers_users FOREIGN KEY (user_id) REFERENCES users (id),
   CONSTRAINT fk_paniers_mangas FOREIGN KEY (manga_id) REFERENCES mangas (id),
-  CONSTRAINT fk_paniers_commandes FOREIGN KEY (commande_id) REFERENCES commandes (id)
+  CONSTRAINT fk_paniers_commandes FOREIGN KEY (commande_id) REFERENCES commandes (id),
+  CONSTRAINT fk_paniers_mangas FOREIGN KEY (prix) REFERENCES mangas (prix)
 ) DEFAULT CHARSET=utf8 ;
 
 

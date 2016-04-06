@@ -54,7 +54,7 @@ $app->register(new Silex\Provider\ValidatorServiceProvider());
 //***************************************
 // Montage des controleurs sur le routeur
 $app->mount("/", new App\Controller\IndexController());
-$app->mount("/produit", new App\Controller\ProduitController($app));
+$app->mount("/manga", new App\Controller\MangaController($app));
 $app->mount("/connexion", new App\Controller\UserController($app));
 
 //On lance l'application
