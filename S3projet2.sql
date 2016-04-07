@@ -110,6 +110,9 @@ CREATE TABLE IF NOT EXISTS commandes (
   CONSTRAINT fk_commandes_etats FOREIGN KEY (etat_id) REFERENCES etats (id)
 ) DEFAULT CHARSET=utf8 ;
 
+INSERT INTO commandes (id, user_id, prix, date_achat, etat_id ) VALUES
+(1, 3, '40','2014-05-05', 1),
+(2, 4, '10','2014-06-06', 2);
 
 
 -- --------------------------------------------------------
@@ -128,6 +131,9 @@ CREATE TABLE IF NOT EXISTS paniers (
   CONSTRAINT fk_paniers_commandes FOREIGN KEY (commande_id) REFERENCES commandes (id)
 ) DEFAULT CHARSET=utf8 ;
 
+INSERT INTO paniers (id, quantite, prix, dateAjoutPanier, user_id, manga_id, commande_id) VALUES
+(1,'1','40','2014-05-05',3,1,1),
+(2,'1','10','2014-06-06',4,2,2);
 
 /****************************************
 *

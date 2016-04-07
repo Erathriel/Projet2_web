@@ -26,6 +26,12 @@
                     <small class="error">{{erreurs.typeManga_id}}</small>
                 {% endif %}
             </label>
+            <label>Nombre d'épisode:
+                <input name="nbEpisode"  type="text"  size="18" 	value="{{donnees.nbEpisode|default('')}}"/>
+                {% if erreurs.nbEpisode is defined %}
+                    <small class="error">{{erreurs.nbEpisode}}</small>
+                {% endif %}
+            </label>
             <label>Prix :
                 <input name="prix"  type="text"  size="18" 	value="{{donnees.prix|default('')}}"/>
                 {% if erreurs.prix is defined %}
