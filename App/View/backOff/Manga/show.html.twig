@@ -29,6 +29,7 @@
 						<td>Disponible</td>
 					{% endif %}
 					{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
+						<td>{{ manga.stock }}</td>
 						<td>
 							<a href="{{ path('manga.edit', {id: manga.id}) }}">modifier</a>
 							<a href="{{ path('manga.delete', {id: manga.id}) }}">supprimer</a>

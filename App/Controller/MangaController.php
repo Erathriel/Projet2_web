@@ -111,13 +111,15 @@ class MangaController implements ControllerProviderInterface
 
     public function validFormEdit(Application $app, Request $req) {
         // var_dump($app['request']->attributes);
-        if (isset($_POST['nom']) && isset($_POST['typeManga_id']) and isset($_POST['nom']) and isset($_POST['nbEpisode']) and isset($_POST['photo']) and isset($_POST['id'])) {
+        if (isset($_POST['nom']) && isset($_POST['typeManga_id']) and isset($_POST['nbEpisode']) and isset($_POST['prix']) and isset($_POST['photo']) and isset($_POST['dispo']) and isset($_POST['stock']) and isset($_POST['id'])) {
             $donnees = [
                 'nom' => htmlspecialchars($_POST['nom']),                    // echaper les entrées
                 'typeManga_id' => htmlspecialchars($app['request']->get('typeManga_id')),
                 'nbEpisode' => htmlspecialchars($_POST['nbEpisode']),
                 'prix' => htmlspecialchars($req->get('prix')),
                 'photo' => $app->escape($req->get('photo')),
+                'dispo' => htmlspecialchars($_POST['dispo']),
+                'stock' => htmlspecialchars($_POST['stock']),
                 'id' => $app->escape($req->get('id'))//$req->query->get('photo')
             ];
             if ((! preg_match("/^[A-Za-z ]{2,}/",$donnees['nom']))) $erreurs['nom']='nom composé de 2 lettres minimum';
@@ -125,6 +127,8 @@ class MangaController implements ControllerProviderInterface
             if(! is_numeric($donnees['nbEpisode']))$erreurs['nbEpisode']='saisir une valeur numérique';
             if(! is_numeric($donnees['prix']))$erreurs['prix']='saisir une valeur numérique';
             if (! preg_match("/[A-Za-z0-9]{2,}.(jpeg|jpg|png)/",$donnees['photo'])) $erreurs['photo']='nom de fichier incorrect (extension jpeg , jpg ou png)';
+            if(! is_numeric($donnees['dispo']))$erreurs['dispo']='saisir une valeur numérique';
+            if(! is_numeric($donnees['stock']))$erreurs['stock']='saisir une valeur numérique';
             if(! is_numeric($donnees['id']))$erreurs['id']='saisir une valeur numérique';
            $contraintes = new Assert\Collection(
                 [
@@ -148,7 +152,7 @@ class MangaController implements ControllerProviderInterface
                 ]);
             $errors = $app['validator']->validate($donnees,$contraintes);  // ce n'est pas validateValue
 
-            if (count($errors) > 0) {
+            if (! empty($erreurs)) {
                 $this->typeMangaModel = new TypeMangaModel($app);
                 $typeMangas = $this->typeMangaModel->getAllTypeMangas();
                 return $app["twig"]->render('backOff/Manga/edit.html.twig',['donnees'=>$donnees,'errors'=>$errors,'erreurs'=>$erreurs,'typeMangas'=>$typeMangas]);

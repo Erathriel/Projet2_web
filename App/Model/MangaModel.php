@@ -52,7 +52,7 @@ class MangaModel {
     function getManga($id) {
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('id', 'typeManga_id', 'nom','nbEpisode', 'prix', 'photo','dispo','sotck')
+            ->select('id', 'typeManga_id', 'nom','nbEpisode', 'prix', 'photo','dispo','stock')
             ->from('mangas')
             ->where('id= :id')
             ->setParameter('id', $id);
@@ -87,8 +87,7 @@ class MangaModel {
         $queryBuilder
             ->delete('mangas')
             ->where('id = :id')
-            ->setParameter('id',(int)$id)
-        ;
+            ->setParameter('id',(int)$id);
         return $queryBuilder->execute();
     }
 

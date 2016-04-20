@@ -1,9 +1,7 @@
 {% extends "layout.html.twig" %}
 {% block contenu %}
-	<form method="post" action="{{ path('produit.validFormEdit') }}">
+	<form method="post" action="{{ path('manga.validFormEdit') }}">
 		<div class="row">
-
-
 
 			{% if errors is defined %}
 			     <div data-alert class="alert-box alert round">
@@ -17,7 +15,7 @@
 			{% endif %}
 
 			<fieldset>
-				<legend>Modifier un produit  (avec twig)</legend>
+				<legend>Modifier un manga  (avec twig)</legend>
 				<input name="id"  type="hidden" value="{{donnees.id}}" />
 				<label>Nom :
 					<input name="nom"  type="text"  size="18" value="{{donnees.nom}}" />
@@ -27,27 +25,45 @@
 				</label>
 				<label>Type :
 					<select name="typeProduit_id">
-						{% for typeProduit in typeProduits %}
-							<option value="{{ typeProduit.id }}"
-									{% if donnees.typeProduit_id is defined and typeProduit.id == donnees.typeProduit_id %} selected {% endif %}>
-								{{ typeProduit.libelle }}
+						{% for typeManga in typeMangas %}
+							<option value="{{ typeManga.id }}"
+									{% if donnees.typeManga_id is defined and typeManga.id == donnees.typeManga_id %} selected {% endif %}>
+								{{ typeManga.libelle }}
 							</option>
 						{% endfor %}
 					</select>
-					{% if erreurs.typeProduit_id is defined %}
-						<small class="error">{{erreurs.typeProduit_id}}</small>
+					{% if erreurs.typeManga_id is defined %}
+						<small class="error">{{erreurs.typeManga_id}}</small>
 					{% endif %}
 				</label>
-				<label>Prix
+				<label>Nombre d'épisode:
+					<input name="nbEpisode"  type="text"  size="18" 	value="{{donnees.nbEpisode|default('')}}"/>
+					{% if erreurs.nbEpisode is defined %}
+						<small class="error">{{erreurs.nbEpisode}}</small>
+					{% endif %}
+				</label>
+				<label>Prix :
 					<input name="prix"  type="text"  size="18" 	value="{{donnees.prix}}"/>
 					{% if erreurs.prix is defined %}
 						<small class="error">{{erreurs.prix}}</small>
 					{% endif %}
 				</label>
-				<label>Photo
+				<label>Photo :
 					<input name="photo"  type="text"  size="18" value="{{donnees.photo}}"/>
 					{% if erreurs.photo is defined %}
 						<small class="error">{{erreurs.photo}}</small>
+					{% endif %}
+				</label>
+				<label>Dispo :
+					<input name="dispo"  type="text"  size="18" 	value="{{donnees.dispo|default('')}}"/>
+					{% if erreurs.dispo is defined %}
+						<small class="error">{{erreurs.dispo}}</small>
+					{% endif %}
+				</label>
+				<label>Stock:
+					<input name="stock"  type="text"  size="18" 	value="{{donnees.stock|default('')}}"/>
+					{% if erreurs.stock is defined %}
+						<small class="error">{{erreurs.stock}}</small>
 					{% endif %}
 				</label>
 
