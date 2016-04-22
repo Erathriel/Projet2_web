@@ -42,7 +42,7 @@ class MangaController implements ControllerProviderInterface
 
     public function validFormAdd(Application $app, Request $req) {
        // var_dump($app['request']->attributes);
-        if (isset($_POST['nom']) && isset($_POST['typeManga_id']) and isset($_POST['nom']) and isset($_POST['nbEpisode']) and isset($_POST['photo'])) {
+        if (isset($_POST['nom']) && isset($_POST['typeManga_id']) and isset($_POST['nom']) and isset($_POST['nbEpisode']) and isset($_POST['photo']) and isset($_POST['dispo']) and isset($_POST['stock'])) {
             $donnees = [
                 'nom' => htmlspecialchars($_POST['nom']),                    // echapper les entrées
                 'typeManga_id' => htmlspecialchars($app['request']->get('typeManga_id')),
@@ -68,8 +68,8 @@ class MangaController implements ControllerProviderInterface
             }
             else
             {
-                $this->MangaModel = new MangaModel($app);
-                $this->MangaModel->insertManga($donnees);
+                $this->mangaModel = new MangaModel($app);
+                $this->mangaModel->insertManga($donnees);
                 return $app->redirect($app["url_generator"]->generate("manga.index"));
             }
 
@@ -85,7 +85,7 @@ class MangaController implements ControllerProviderInterface
         $this->mangaModel = new MangaModel($app);
         $donnees = $this->mangaModel->getManga($id);
         return $app["twig"]->render('backOff/Manga/delete.html.twig',['typeMangas'=>$typeMangas,'donnees'=>$donnees]);
-        return "add Manga";
+        return "delete Manga";
     }
 
     public function validFormDelete(Application $app, Request $req) {
@@ -106,12 +106,13 @@ class MangaController implements ControllerProviderInterface
         $this->mangaModel = new MangaModel($app);
         $donnees = $this->mangaModel->getManga($id);
         return $app["twig"]->render('backOff/Manga/edit.html.twig',['typeMangas'=>$typeMangas,'donnees'=>$donnees]);
-        return "add Manga";
+        return "edit Manga";
     }
 
     public function validFormEdit(Application $app, Request $req) {
         // var_dump($app['request']->attributes);
-        if (isset($_POST['nom']) && isset($_POST['typeManga_id']) and isset($_POST['nbEpisode']) and isset($_POST['prix']) and isset($_POST['photo']) and isset($_POST['dispo']) and isset($_POST['stock']) and isset($_POST['id'])) {
+        if (isset($_POST['nom']) and isset($_POST['typeManga_id']) and isset($_POST['nbEpisode']) and isset($_POST['prix']) and isset($_POST['photo']) and isset($_POST['dispo']) and isset($_POST['stock']) and isset($_POST['id'])) {
+            printf('fhfhfhfhf');
             $donnees = [
                 'nom' => htmlspecialchars($_POST['nom']),                    // echaper les entrées
                 'typeManga_id' => htmlspecialchars($app['request']->get('typeManga_id')),
@@ -140,7 +141,7 @@ class MangaController implements ControllerProviderInterface
                     ],
                     //http://symfony.com/doc/master/reference/constraints/Regex.html
                     'photo' => [
-                        new Assert\Length(array('min' => 5)), 
+                        new Assert\Length(array('min' => 5)),
                         new Assert\Regex([ 'pattern' => '/[A-Za-z0-9]{2,}.(jpeg|jpg|png)/',
                         'match'   => true,
                         'message' => 'nom de fichier incorrect (extension jpeg , jpg ou png)' ]),
@@ -159,14 +160,16 @@ class MangaController implements ControllerProviderInterface
             }
             else
             {
-                $this->MangaModel = new MangaModel($app);
-                $this->MangaModel->updateManga($donnees);
+                $this->mangaModel = new MangaModel($app);
+                $this->mangaModel->updateManga($donnees);
                 return $app->redirect($app["url_generator"]->generate("manga.index"));
             }
 
         }
-        else
+        else{
+            printf('hfghg');
             return $app->abort(404, 'error Pb id form edit');
+        }
 
     }
 
