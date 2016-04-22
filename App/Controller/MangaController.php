@@ -112,7 +112,6 @@ class MangaController implements ControllerProviderInterface
     public function validFormEdit(Application $app, Request $req) {
         // var_dump($app['request']->attributes);
         if (isset($_POST['nom']) and isset($_POST['typeManga_id']) and isset($_POST['nbEpisode']) and isset($_POST['prix']) and isset($_POST['photo']) and isset($_POST['dispo']) and isset($_POST['stock']) and isset($_POST['id'])) {
-            printf('fhfhfhfhf');
             $donnees = [
                 'nom' => htmlspecialchars($_POST['nom']),                    // echaper les entrées
                 'typeManga_id' => htmlspecialchars($app['request']->get('typeManga_id')),
@@ -167,7 +166,6 @@ class MangaController implements ControllerProviderInterface
 
         }
         else{
-            printf('hfghg');
             return $app->abort(404, 'error Pb id form edit');
         }
 

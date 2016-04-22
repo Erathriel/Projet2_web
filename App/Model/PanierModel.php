@@ -22,7 +22,7 @@ class PanierModel {
             ->innerJoin('p', 'mangas', 'm', 'p.manga_id=m.id')
             ->innerJoin('p', 'commandes', 'c', 'p.commande_id=c.id')
             ->where('p.user_id = :user_id')
-            ->addOrderBy('m.id', 'ASC')
+            ->addOrderBy('m.typeManga_id', 'ASC')
             ->setParameter('user_id', $data);
         return $queryBuilder->execute()->fetchAll();
 

@@ -1,44 +1,51 @@
 {% extends "layout.html.twig" %}
 {% block contenu %}
-	<div class="row">
-		{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
-			<a href="{{ path('manga.add') }}"> Ajouter un manga </a>
-		{% endif %}
-
-		<table>
-			<caption>Recapitulatifs des mangas (avec twig)</caption>
-			<thead>
-			<tr><th>nom</th><th>id</th><th>nombre d'épisode</th><th>type</th><th>prix</th><th>photo</th><th>dispo</th>
+	<div class="row align-center">
+			<div class="column large-9 small-4">
 				{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
-					<th>stock</th>
-					<th>opération</th>
+					<a href="{{ path('manga.add') }}"> Ajouter un manga </a>
 				{% endif %}
-			</tr>
-			</thead>
-			<tbody>
-			{% for manga in data if data is not empty %}
+				<table>
+					<caption>Recapitulatifs des mangas (avec twig)</caption>
+					<thead>
+					<tr><th>nom</th><th>id</th><th>nombre d'épisode</th><th>type</th><th>prix</th><th>photo</th><th>dispo</th>
+						{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
+							<th>stock</th>
+							<th>opération</th>
+						{% endif %}
+					</tr>
+					</thead>
+					<tbody>
+					{% for manga in data if data is not empty %}
 
-				<tr>
-					<td>{{manga.nom}}</td><td>{{manga.id}}</td><td>{{ manga.nbEpisode }}</td><td>{{manga.libelle}}</td><td>{{manga.prix}}€</td>
-					<td>
-						<img style="width:110px;height:120px" src="{{asset('images/')}}{{manga.photo}}" alt="image de {{manga.libelle}}" >
-					</td>
-					{% if manga.stock < manga.dispo %}
-						<td>{{ manga.stock }}</td>
-					{% else %}
-						<td>Disponible</td>
-					{% endif %}
-					{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
-						<td>{{ manga.stock }}</td>
-						<td>
-							<a href="{{ path('manga.edit', {id: manga.id}) }}">modifier</a>
-							<a href="{{ path('manga.delete', {id: manga.id}) }}">supprimer</a>
-						</td>
-					{% endif %}
-				</tr>
-			{% endfor %}
-			<tbody>
-		</table>
+						<tr>
+							<td>{{manga.nom}}</td><td>{{manga.id}}</td><td>{{ manga.nbEpisode }}</td><td>{{manga.libelle}}</td><td>{{manga.prix}}€</td>
+							<td>
+								<img style="width:110px;height:120px" src="{{asset('images/')}}{{manga.photo}}" alt="image de {{manga.libelle}}" >
+							</td>
+							{% if manga.stock < manga.dispo %}
+								{% set dispo = manga.stock %}
+								<td>{{ dispo }}</td>
+							{% else %}
+								<td>Disponible</td>
+							{% endif %}
+							{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
+								<td>{{ manga.stock }}</td>
+								<td>
+									<a href="{{ path('manga.edit', {id: manga.id}) }}">modifier</a>
+									<a href="{{ path('manga.delete', {id: manga.id}) }}">supprimer</a>
+								</td>
+							{% endif %}
+						</tr>
+					{% endfor %}
+					<tbody>
+				</table>
+			</div>
+			<div class="column large-3 small-4">
+				{% if  app.session.get('droit') is defined and  app.session.get('droit') == 'DROITclient' %}
+					<a href="{{ path('panier.show') }}">Voir mon panier</a>
+				{% endif %}
+			</div>
 	</div>
 {% endblock %}
 

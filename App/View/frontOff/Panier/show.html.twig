@@ -6,22 +6,26 @@
 			<a href="{{ path('manga.add') }}"> Ajouter un manga </a>
 		{% endif %}
 	#}
+		{% if data is not empty %}
 		<table>
-			<caption>Recapitulatifs du panier</caption>
-			<thead>
-			<tr><th>nom du manga</th><th>quantité </th><th>prix</th><th>date d'ajout</th>
-			</thead>
-			<tbody>
+				<caption>Recapitulatifs du panier</caption>
+				<thead>
+				<tr><th>nom du manga</th><th>quantité </th><th>prix</th><th>date d'ajout</th><th> - </th>
+				</thead>
+				<tbody>
 
-			{% for panier in data if data is not empty %}
-				<tr>
-					<td>{{panier.nom}}</td><td>{{panier.quantite}}</td><td>{{ panier.prix }}</td><td>{{panier.dateAjoutPanier}}</td>
+				{% for panier in data if data is not empty %}
+					<tr>
+						<td>{{panier.nom}}</td><td>{{panier.quantite}}</td><td>{{ panier.prix }}</td><td>{{panier.dateAjoutPanier}}</td><td><a href="#"> Ajouter</a><a href="#">  Supprimer</a></td>
 
-				</tr>
-			{% endfor %}
+					</tr>
+				{% endfor %}
 
-			<tbody>
+				</tbody>
 		</table>
+		{% else %}
+			<p>Votre panier est vide. <a href="{{ url('manga.show') }}">Retour sur la page des ventes</a></p>
+		{% endif %}
 	</div>
 {% endblock %}
 
