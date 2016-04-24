@@ -7,26 +7,30 @@
 		{% endif %}
 	#}
 		{% if data is not empty %}
-		<table>
-				<caption>Recapitulatifs du panier</caption>
-				<thead>
-				<tr><th>nom du manga</th><th>quantité </th><th>prix</th><th>date d'ajout</th><th> - </th>
-				</thead>
-				<tbody>
+			<fieldset>
+				<legend>Votre panier</legend>
+				<table>
+					<caption>Recapitulatifs du panier</caption>
+					<thead>
+					<tr><th>nom du manga</th><th>quantité </th><th>prix</th><th>date d'ajout</th><th> - </th>
+					</thead>
+					<tbody>
 
-				{% for panier in data if data is not empty %}
-					<tr>
-						<td>{{panier.nom}}</td><td>{{panier.quantite}}</td><td>{{ panier.prix }}</td><td>{{panier.dateAjoutPanier}}</td><td><a href="#"> Ajouter</a><a href="#">  Supprimer</a></td>
+					{% for panier in data if data is not empty %}
+						<tr>
+							<td>{{panier.nom}}</td><td>{{panier.quantite}}</td><td>{{ panier.prix }}</td><td>{{panier.dateAjoutPanier}}</td><td><a href="#"> Ajouter</a><a href="#">  Supprimer</a></td>
 
-					</tr>
-				{% endfor %}
-
-				</tbody>
-		</table>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+				<input type="submit" name="validerPanier" value="Valider votre commande" />
+			</fieldset>
 			<a href="{{ url('manga.show') }}">Retour sur la page des ventes</a>
 		{% else %}
 			<p>Votre panier est vide. <a href="{{ url('manga.show') }}">Retour sur la page des ventes</a></p>
 		{% endif %}
+
 	</div>
 {% endblock %}
 
