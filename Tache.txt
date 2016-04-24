@@ -1,9 +1,11 @@
-Geoffrey :
-	- Ajouter des mangas
-	- Modifier des mangas
-	- Supprimer des mangas
+Fini :
+    - Ajouter des mangas
+    - Modifier des mangas
+    - Supprimer des mangas
+    - Afficher le panier
+    - Afficher les mangas
 
-Cedric :
-	- Afficher le panier
-	- Afficher les mangas
+A faire :
+    - Ajouter au panier ( avec quantité )
+    - Supprimer du panier
 	

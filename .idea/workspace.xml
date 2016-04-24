@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2e5b5e4c-fcf1-4e2f-b9c0-8a06252acb61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controller/MangaController.php" afterPath="$PROJECT_DIR$/App/Controller/MangaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Model/PanierModel.php" afterPath="$PROJECT_DIR$/App/Model/PanierModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig" afterPath="$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig" afterPath="$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tache.txt" afterPath="$PROJECT_DIR$/Tache.txt" />
     </list>
     <ignored path="Projet2_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,11 +63,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="true">
+          <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8660714">
-                  <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+                <state vertical-scroll-proportion="-4.6153846">
+                  <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Tache.txt" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Tache.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.18646409">
+                  <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -89,16 +98,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-17.291666">
                   <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="nav_backOff.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/App/View/nav_backOff.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -191,8 +190,8 @@
           <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.69196427">
-                  <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.55803573">
+                  <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -276,6 +275,7 @@
         <option value="$PROJECT_DIR$/App/Controller/MangaController.php" />
         <option value="$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig" />
         <option value="$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig" />
+        <option value="$PROJECT_DIR$/Tache.txt" />
       </list>
     </option>
   </component>
@@ -557,7 +557,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461317092704</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Lien menant au panier depuis page de ventes ( client )&#10;Lien menant à la page de ventes si panier vide ( teste avec client3)">
+      <created>1461321210259</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1461321210259</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -609,7 +615,8 @@
     <MESSAGE value="Modifier sur les manga fonctionne enfin ( erreurs débiles que j'ai chercher pendant 20 min ! )" />
     <MESSAGE value="Panier placer en front office" />
     <MESSAGE value="Création fichier du model et du controller de Commande" />
-    <option name="LAST_COMMIT_MESSAGE" value="Création fichier du model et du controller de Commande" />
+    <MESSAGE value="Lien menant au panier depuis page de ventes ( client )&#10;Lien menant à la page de ventes si panier vide ( teste avec client3)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lien menant au panier depuis page de ventes ( client )&#10;Lien menant à la page de ventes si panier vide ( teste avec client3)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -816,13 +823,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tache.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1021,16 +1021,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69196427">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.55803573">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8660714">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state vertical-scroll-proportion="-4.6153846">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tache.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18646409">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding />
         </state>
       </provider>

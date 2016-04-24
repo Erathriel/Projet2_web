@@ -8,10 +8,13 @@
 				<table>
 					<caption>Recapitulatifs des mangas (avec twig)</caption>
 					<thead>
-					<tr><th>nom</th><th>id</th><th>nombre d'épisode</th><th>type</th><th>prix</th><th>photo</th><th>dispo</th>
+					<tr><th>Nom</th><th>Id</th><th>Nombre d'épisode</th><th>Type</th><th>Prix</th><th>Photo</th><th>Dispo</th>
 						{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
-							<th>stock</th>
-							<th>opération</th>
+							<th>Stock</th>
+							<th>Opération</th>
+						{% endif %}
+						{% if  app.session.get('droit') is defined and  app.session.get('droit') == 'DROITclient' %}
+							<th> - </th>
 						{% endif %}
 					</tr>
 					</thead>
@@ -32,8 +35,13 @@
 							{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
 								<td>{{ manga.stock }}</td>
 								<td>
-									<a href="{{ path('manga.edit', {id: manga.id}) }}">modifier</a>
-									<a href="{{ path('manga.delete', {id: manga.id}) }}">supprimer</a>
+									<a href="{{ path('manga.edit', {id: manga.id}) }}">Modifier</a>
+									<a href="{{ path('manga.delete', {id: manga.id}) }}">Supprimer</a>
+								</td>
+							{% endif %}
+							{% if  app.session.get('droit') is defined and  app.session.get('droit') == 'DROITclient' %}
+								<td>
+									<a href="#"> Ajouter au panier </a>
 								</td>
 							{% endif %}
 						</tr>
