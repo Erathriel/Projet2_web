@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;   // pour utiliser request
 
 use App\Model\MangaModel;
 use App\Model\TypeMangaModel;
+use App\Model\PanierModel;
 
 use Symfony\Component\Validator\Constraints as Assert;   // pour utiliser la validation
 use Symfony\Component\Validator\Constraint;
@@ -30,7 +31,10 @@ class MangaController implements ControllerProviderInterface
     public function show(Application $app) {
         $this->mangaModel = new MangaModel($app);
         $mangas = $this->mangaModel->getAllMangas();
-        return $app["twig"]->render('backOff/Manga/show.html.twig',['data'=>$mangas]);
+        $panierModel = new PanierModel($app);
+        $user_id = $app['session']->get('user_id');
+        $panier = $panierModel->getAllPanier($user_id);
+        return $app["twig"]->render('backOff/Manga/show.html.twig',['data'=>$mangas, 'panier' => $panier]);
     }
 
     public function add(Application $app) {
