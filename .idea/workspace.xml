@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e5b5e4c-fcf1-4e2f-b9c0-8a06252acb61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/View/frontOff/Panier/add.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controller/PanierController.php" afterPath="$PROJECT_DIR$/App/Controller/PanierController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Model/CommandeModel.php" afterPath="$PROJECT_DIR$/App/Model/CommandeModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Model/PanierModel.php" afterPath="$PROJECT_DIR$/App/Model/PanierModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig" afterPath="$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/config.php" afterPath="$PROJECT_DIR$/App/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/frontOff/Panier/add.html.twig" afterPath="$PROJECT_DIR$/App/View/frontOff/Panier/add.html.twig" />
     </list>
     <ignored path="Projet2_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,8 +32,8 @@
           <file leaf-file-name="MangaController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/Controller/MangaController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-68.583336">
-                  <caret line="186" column="127" selection-start-line="186" selection-start-column="105" selection-end-line="186" selection-end-column="127" />
+                <state vertical-scroll-proportion="-14.208333">
+                  <caret line="99" column="82" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="82" />
                   <folding>
                     <element signature="e#33#55#0#PHP" expanded="true" />
                   </folding>
@@ -86,10 +83,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="true">
+          <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/add.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.3857143">
+                <state vertical-scroll-proportion="-11.25">
                   <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
                   <folding />
                 </state>
@@ -99,9 +96,21 @@
           <file leaf-file-name="MangaModel.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/Model/MangaModel.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="7.0416665">
-                  <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+                <state vertical-scroll-proportion="-0.20833333">
+                  <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PanierModel.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/App/Model/PanierModel.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.26285714">
+                  <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+                  <folding>
+                    <element signature="e#29#66#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -110,7 +119,7 @@
             <entry file="file://$PROJECT_DIR$/S3projet2.sql">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="120" column="37" selection-start-line="120" selection-start-column="37" selection-end-line="120" selection-end-column="37" />
+                  <caret line="138" column="1" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -119,7 +128,7 @@
           <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-8.326923">
+                <state vertical-scroll-proportion="-4.25">
                   <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
                   <folding />
                 </state>
@@ -130,18 +139,6 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="PanierModel.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/App/Model/PanierModel.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-31.875">
-                  <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#29#66#0#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="UserModel.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/Model/UserModel.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -157,8 +154,8 @@
           <file leaf-file-name="PanierController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/App/Controller/PanierController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.64">
-                  <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+                <state vertical-scroll-proportion="0.6142857">
+                  <caret line="48" column="78" selection-start-line="48" selection-start-column="78" selection-end-line="48" selection-end-column="78" />
                   <folding>
                     <element signature="e#33#55#0#PHP" expanded="true" />
                   </folding>
@@ -166,12 +163,24 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-22.5">
+                  <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/add.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.5">
-                  <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
-                  <folding />
+                <state vertical-scroll-proportion="-10.625">
+                  <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+                  <folding>
+                    <marker date="1461827901682" expanded="true" signature="33:716" placeholder="{% block contenu ...%}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -220,12 +229,12 @@
         <option value="$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig" />
         <option value="$PROJECT_DIR$/App/View/nav_home.html.twig" />
         <option value="$PROJECT_DIR$/App/config.php" />
-        <option value="$PROJECT_DIR$/App/Model/PanierModel.php" />
         <option value="$PROJECT_DIR$/App/Controller/MangaController.php" />
         <option value="$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig" />
         <option value="$PROJECT_DIR$/App/Model/CommandeModel.php" />
         <option value="$PROJECT_DIR$/App/View/frontOff/Panier/add.html.twig" />
         <option value="$PROJECT_DIR$/App/Controller/PanierController.php" />
+        <option value="$PROJECT_DIR$/App/Model/PanierModel.php" />
       </list>
     </option>
   </component>
@@ -547,7 +556,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461494941817</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Ajouter panier quasiment fonctionnel juste un probleme avec la date qui empeche l'ajout !">
+      <created>1461804633657</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1461804633657</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -565,20 +580,20 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27061856" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -601,7 +616,8 @@
     <MESSAGE value="Création fichier du model et du controller de Commande" />
     <MESSAGE value="Lien menant au panier depuis page de ventes ( client )&#10;Lien menant à la page de ventes si panier vide ( teste avec client3)" />
     <MESSAGE value="Petites modification mineur" />
-    <option name="LAST_COMMIT_MESSAGE" value="Petites modification mineur" />
+    <MESSAGE value="Ajouter panier quasiment fonctionnel juste un probleme avec la date qui empeche l'ajout !" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajouter panier quasiment fonctionnel juste un probleme avec la date qui empeche l'ajout !" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -881,14 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7714286">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/View/nav_backOff.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.85714287">
@@ -933,14 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Model/MangaModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.0416665">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Model/UserModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.125">
@@ -967,54 +967,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Model/PanierModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.875">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#29#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/S3projet2.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="37" selection-start-line="120" selection-start-column="37" selection-end-line="120" selection-end-column="37" />
+          <caret line="138" column="1" selection-start-line="138" selection-start-column="1" selection-end-line="138" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.326923">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controller/MangaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-68.583336">
-          <caret line="186" column="127" selection-start-line="186" selection-start-column="105" selection-end-line="186" selection-end-column="127" />
-          <folding>
-            <element signature="e#33#55#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/add.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3857143">
+        <state vertical-scroll-proportion="-11.25">
           <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Model/MangaModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.20833333">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1030,12 +1002,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controller/PanierController.php">
+    <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/add.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64">
-          <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <marker date="1461827901682" expanded="true" signature="33:716" placeholder="{% block contenu ...%}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.5">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controller/MangaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.208333">
+          <caret line="99" column="82" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="82" />
           <folding>
             <element signature="e#33#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.25">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controller/PanierController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6142857">
+          <caret line="48" column="78" selection-start-line="48" selection-start-column="78" selection-end-line="48" selection-end-column="78" />
+          <folding>
+            <element signature="e#33#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Model/PanierModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26285714">
+          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+          <folding>
+            <element signature="e#29#66#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

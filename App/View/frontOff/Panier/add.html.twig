@@ -11,12 +11,6 @@
                    <small class="error">{{erreurs.quantite}}</small>
                {% endif %}
            </label>
-           <label>Date :
-               <input name="dateAjoutPanier"  type="text"  size="18" 	value="{{donnees.dateAjoutPanier|default('')}}"/>
-               {% if erreurs.dateAjoutPanier is defined %}
-                   <small class="error">{{erreurs.dateAjoutPanier}}</small>
-               {% endif %}
-           </label>
            <input type="submit" name="ajouterPanier" value="ajouter" />
        </fieldset> 
     </div>

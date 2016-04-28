@@ -31,50 +31,26 @@ class PanierController implements ControllerProviderInterface
         $this->panierModel = new PanierModel($app);
         $user_id = $app['session']->get('user_id');
         $panier = $this->panierModel->getAllPanier($user_id);
+        //$prixTotal = $this->panierModel;
         return $app["twig"]->render('frontOff/Panier/show.html.twig',['data'=>$panier]);
     }
 
-    public function add(Application $app, $id){
+    public function add(Application $app, Request $req){
         $mangaModel = new MangaModel($app);
-        $manga = $mangaModel->getManga($id);
+        $this->panierModel = new PanierModel($app);
+        $manga_id = $app->escape($req->get('manga_id'));
         $user_id = $app['session']->get('user_id');
-        $commandeModel = new CommandeModel($app);
-        $commande = $commandeModel->getAllCommandes($user_id);
-        return $app["twig"]->render('frontOff/Panier/add.html.twig',['data'=>$manga, 'id'=>$commande]);
+        if($this->panierModel->countMangaLigne($manga_id,$user_id)>0){
+            $this->panierModel->updateMangaLigneAdd($manga_id,$user_id);
+        }
+        else {
+            $this->panierModel->insertPanier($manga_id,$user_id);
+        }
+        return $app->redirect($app["url_generator"]->generate("manga.index"));
         return "add Panier";
 
 
     }
-
-    public function validFormAdd(Application $app, Request $req){
-        $dataManga = $app->escape($req->get('id','prix'));
-        $idCommande = $app->escape($req->get('id'));
-        $user_id = $app['session']->get('user_id');
-        $donnees = [
-            'quantite'=>htmlspecialchars($_POST['quantite']),
-            'dateAjoutPanier'=>htmlspecialchars($_POST['dateAjoutPanier'])
-        ];
-
-        if(! is_numeric($donnees['quantite']))$erreurs['quantite']='saisir une valeur numérique';
-        if (! preg_match("/^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$/",$donnees['dateAjoutPanier'])) $erreurs['dateAjoutPanier']='Date incorrect';
-
-        if(! empty($erreurs))
-        {
-            $mangaModel = new MangaModel($app);
-            $manga = $mangaModel->getManga($dataManga[0]);
-            $user_id = $app['session']->get('user_id');
-            $commandeModel = new CommandeModel($app);
-            $commande = $commandeModel->getAllCommandes($user_id);
-            return $app["twig"]->render('frontOff/Panier/add.html.twig',['donnees'=>$donnees,'erreurs'=>$erreurs,'data'=>$manga, 'id'=>$commande]);
-        }
-        else
-        {
-            $this->panierModel = new PanierModel($app);
-            $this->panierModel->insertPanier($donnees, $dataManga, $idCommande, $user_id);
-            return $app->redirect($app["url_generator"]->generate("manga.index"));
-        }
-    }
-
 
     public function connect(Application $app) {  //http://silex.sensiolabs.org/doc/providers.html#controller-providers
         $controllers = $app['controllers_factory'];

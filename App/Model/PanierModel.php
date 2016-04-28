@@ -29,24 +29,45 @@ class PanierModel {
     }
     // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/query-builder.html#join-clauses
     
-    public function insertPanier($donnees, $dataManga, $idCommande, $user_id){
+    public function insertPanier($manga_id, $user_id){
         $queryBuilder = new QueryBuilder($this->db);
+        $prix = (float) $queryBuilder->select('prix')->from('mangas')->where('id=:manga_id')
+            ->setParameter('manga_id', $manga_id)->execute()->fetchColumn(0);
         $queryBuilder->insert('paniers')
             ->values([
                 'quantite' => '?',
                 'prix' =>':prix',
-                'dateAjoutPanier' => '?',
                 'user_id' => ':user_id',
-                'manga_id' => ':manga_id',
-                'commande_id' => ':commande_id'
+                'manga_id' => ':manga_id'
             ])
-            ->setParameter(0, $donnees['quantite'])
-            ->setParameter('prix', $dataManga[1])
-            ->setParameter(1, $donnees['dateAjoutPanier'])
+            ->setParameter('quantite', '1')
+            ->setParameter('prix', $prix)
             ->setParameter('user_id', $user_id)
-            ->setParameter('manga_id', $dataManga[1])
-            ->setParameter('commande_id', $idCommande)
+            ->setParameter('manga_id', $manga_id)
         ;
+        return $queryBuilder->execute();
+    }
+
+    public function countMangaLigne($manga_id, $user_id){
+        $queryBuilder = new QueryBuilder($this->db);
+        $queryBuilder
+            ->select('count(manga_id)')->from('paniers')
+            -> where('manga_id = :manga_id')->andWhere('user_id = :user_id')
+            ->andWhere('commande_id is Null')
+            ->setParameter('manga_id',$manga_id)->setParameter('user_id', $user_id);
+        return $queryBuilder->execute()->fetchColumn(0);
+    }
+
+    public function updateMangaLigneAdd($manga_id, $user_id){
+        $queryBuilder = new QueryBuilder($this->db);
+        $prix = (float) $queryBuilder->select('prix')->from('mangas')->where('id=:manga_id')
+            ->setParameter('manga_id', $manga_id)->execute()->fetchColumn(0);
+        $queryBuilder ->update('paniers')
+            ->set('quantite','quantite+1')->set('prix',':prix')
+            ->where('manga_id = :manga_id')->andWhere('user_id = :user_id')
+            ->andWhere('commande_id is Null')
+            ->setParameter('prix',$prix)->setParameter('manga_id',$manga_id)
+            ->setParameter('user_id',$user_id);
         return $queryBuilder->execute();
     }
 
