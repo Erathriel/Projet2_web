@@ -18,10 +18,9 @@ class PanierModel {
         $queryBuilder
             ->select('m.nom', 'p.quantite','p.prix','p.dateAjoutPanier')
             ->from('paniers', 'p')
-            ->innerJoin('p', 'users', 'u', 'p.user_id=u.id')
             ->innerJoin('p', 'mangas', 'm', 'p.manga_id=m.id')
-            ->innerJoin('p', 'commandes', 'c', 'p.commande_id=c.id')
             ->where('p.user_id = :user_id')
+            ->andWhere('p.commande_id is Null')
             ->addOrderBy('m.typeManga_id', 'ASC')
             ->setParameter('user_id', $data);
         return $queryBuilder->execute()->fetchAll();
@@ -35,12 +34,12 @@ class PanierModel {
             ->setParameter('manga_id', $manga_id)->execute()->fetchColumn(0);
         $queryBuilder->insert('paniers')
             ->values([
-                'quantite' => '?',
+                'quantite' => '1',
                 'prix' =>':prix',
                 'user_id' => ':user_id',
-                'manga_id' => ':manga_id'
+                'manga_id' => ':manga_id',
+
             ])
-            ->setParameter('quantite', '1')
             ->setParameter('prix', $prix)
             ->setParameter('user_id', $user_id)
             ->setParameter('manga_id', $manga_id)

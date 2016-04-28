@@ -38,7 +38,7 @@ class PanierController implements ControllerProviderInterface
     public function add(Application $app, Request $req){
         $mangaModel = new MangaModel($app);
         $this->panierModel = new PanierModel($app);
-        $manga_id = $app->escape($req->get('manga_id'));
+        $manga_id = $app->escape($req->get('id'));
         $user_id = $app['session']->get('user_id');
         if($this->panierModel->countMangaLigne($manga_id,$user_id)>0){
             $this->panierModel->updateMangaLigneAdd($manga_id,$user_id);
