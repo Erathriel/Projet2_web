@@ -29,25 +29,23 @@ class PanierModel {
     }
     // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/query-builder.html#join-clauses
     
-    public function insertPanier($donnees){
+    public function insertPanier($donnees, $dataManga, $idCommande, $user_id){
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder->insert('paniers')
             ->values([
-                'id' => '?',
                 'quantite' => '?',
-                'prix' =>'?',
+                'prix' =>':prix',
                 'dateAjoutPanier' => '?',
-                'user_id' => '?',
-                'manga_id' => '?',
-                'commande_id' => '?'
+                'user_id' => ':user_id',
+                'manga_id' => ':manga_id',
+                'commande_id' => ':commande_id'
             ])
-            ->setParameter(0, $donnees['id'])
-            ->setParameter(1, $donnees['quantite'])
-            ->setParameter(2, $donnees['prix'])
-            ->setParameter(3, $donnees['dateAjoutPanier'])
-            ->setParameter(4, $donnees['user_id'])
-            ->setParameter(5, $donnees['manga_id'])
-            ->setParameter(6, $donnees['commande_id'])
+            ->setParameter(0, $donnees['quantite'])
+            ->setParameter('prix', $dataManga[1])
+            ->setParameter(1, $donnees['dateAjoutPanier'])
+            ->setParameter('user_id', $user_id)
+            ->setParameter('manga_id', $dataManga[1])
+            ->setParameter('commande_id', $idCommande)
         ;
         return $queryBuilder->execute();
     }

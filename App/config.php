@@ -1,8 +1,8 @@
 <?php
 define("hostname","localhost"); // ou serveurmysql
-define("database","manga");
-define("username","root");
-define("password","x");
+-define("database","BDD_gnoro");
+-define("username","gnoro");
+-define("password","05111996");
 
 //define("database","manga");
 //define("username","root");

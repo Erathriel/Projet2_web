@@ -1,0 +1,24 @@
+{% extends "layout.html.twig" %}
+{% block contenu %}
+<form method="post" action="{{ path('panier.validFormAdd') }}">
+    <div class="row">
+        <input name="id"  type="hidden" value="{{ data.id }}" />
+       <fieldset>
+           <legend>Ajout au panier du manga : </legend>
+           <label>Quantité souhaitée :
+               <input name="quantite"  type="text"  size="18" 	value="{{donnees.quantite|default('')}}"/>
+               {% if erreurs.quantite is defined %}
+                   <small class="error">{{erreurs.quantite}}</small>
+               {% endif %}
+           </label>
+           <label>Date :
+               <input name="dateAjoutPanier"  type="text"  size="18" 	value="{{donnees.dateAjoutPanier|default('')}}"/>
+               {% if erreurs.dateAjoutPanier is defined %}
+                   <small class="error">{{erreurs.dateAjoutPanier}}</small>
+               {% endif %}
+           </label>
+           <input type="submit" name="ajouterPanier" value="ajouter" />
+       </fieldset> 
+    </div>
+</form>
+{% endblock %}

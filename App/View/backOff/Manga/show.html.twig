@@ -41,15 +41,17 @@
 							{% endif %}
 							{% if  app.session.get('droit') is defined and  app.session.get('droit') == 'DROITclient' %}
 								<td>
-									<form method="post" action="{{ path('panier.add' , {id: manga.id}) }}"><
-										<input name="id"  type="hidden"  />
-										<input name="quantite"  type="hidden"  />
-										<input name="prix"  type="hidden"  />
-										<input name="dateAjoutPanier"  type="hidden"  />
-										<input name="user_id"  type="hidden"  />
-										<input name="manga_id"  type="hidden"  />
-										<input name="commande_id"  type="hidden"  />
-									</form>
+									{#<form method="post" action="{{ path('panier.add' , {id: manga.id}) }}"><#}
+										{#<input name="id"  type="hidden"  />#}
+										{#<input name="quantite"  type="hidden"  />#}
+										{#<input name="prix"  type="hidden"  />#}
+										{#<input name="dateAjoutPanier"  type="hidden"  />#}
+										{#<input name="user_id"  type="hidden"  />#}
+										{#<input name="manga_id"  type="hidden"  />#}
+										{#<input name="commande_id"  type="hidden"  />#}
+									{#</form>#}
+
+									<a href="{{ path('panier.add', {id: manga.id}) }}"> Ajouter au panier </a>
 								</td>
 							{% endif %}
 						</tr>

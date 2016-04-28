@@ -3,7 +3,17 @@ namespace App\Controller;
 
 use Silex\Application;
 use Silex\ControllerProviderInterface;
+
+use Symfony\Component\HttpFoundation\Request;   // pour utiliser request
+
 use App\Model\PanierModel;
+use App\Model\MangaModel;
+use App\Model\CommandeModel;
+
+use Symfony\Component\Validator\Constraints as Assert;   // pour utiliser la validation
+use Symfony\Component\Validator\Constraint;
+use Symfony\Component\Validator\ConstraintValidator;
+use Symfony\Component\Security;
 
 class PanierController implements ControllerProviderInterface
 {
@@ -24,19 +34,45 @@ class PanierController implements ControllerProviderInterface
         return $app["twig"]->render('frontOff/Panier/show.html.twig',['data'=>$panier]);
     }
 
-    public function add(Application $app){
+    public function add(Application $app, $id){
+        $mangaModel = new MangaModel($app);
+        $manga = $mangaModel->getManga($id);
+        $user_id = $app['session']->get('user_id');
+        $commandeModel = new CommandeModel($app);
+        $commande = $commandeModel->getAllCommandes($user_id);
+        return $app["twig"]->render('frontOff/Panier/add.html.twig',['data'=>$manga, 'id'=>$commande]);
+        return "add Panier";
+
+
+    }
+
+    public function validFormAdd(Application $app, Request $req){
+        $dataManga = $app->escape($req->get('id','prix'));
+        $idCommande = $app->escape($req->get('id'));
+        $user_id = $app['session']->get('user_id');
         $donnees = [
-            'id' => htmlspecialchars($_POST['id']),                    // echapper les entrées
-            'quantite' => htmlspecialchars($_POST('quantite')),
-            'prix' => htmlspecialchars($_POST['prix']),
-            'dateAjoutPanier' => htmlspecialchars($_POST('dateAjoutPanier')),
-            'user_id' => htmlspecialchars($_POST('user_id')),  //$req->query->get('photo')
-            'manga_id' => htmlspecialchars($_POST['manga_id']),
-            'commande_id' => htmlspecialchars($_POST['commande_id'])
+            'quantite'=>htmlspecialchars($_POST['quantite']),
+            'dateAjoutPanier'=>htmlspecialchars($_POST['dateAjoutPanier'])
         ];
-        $this->panierModel = new panierModel($app);
-        $this->panierModel->insertPanier($donnees);
-        return $app->redirect($app["url_generator"]->generate("manga.index"));
+
+        if(! is_numeric($donnees['quantite']))$erreurs['quantite']='saisir une valeur numérique';
+        if (! preg_match("/^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$/",$donnees['dateAjoutPanier'])) $erreurs['dateAjoutPanier']='Date incorrect';
+
+        if(! empty($erreurs))
+        {
+            $mangaModel = new MangaModel($app);
+            $manga = $mangaModel->getManga($dataManga[0]);
+            $user_id = $app['session']->get('user_id');
+            $commandeModel = new CommandeModel($app);
+            $commande = $commandeModel->getAllCommandes($user_id);
+            return $app["twig"]->render('frontOff/Panier/add.html.twig',['donnees'=>$donnees,'erreurs'=>$erreurs,'data'=>$manga, 'id'=>$commande]);
+        }
+        else
+        {
+            $this->panierModel = new PanierModel($app);
+            $this->panierModel->insertPanier($donnees, $dataManga, $idCommande, $user_id);
+            return $app->redirect($app["url_generator"]->generate("manga.index"));
+        }
     }
 
 
@@ -46,8 +82,8 @@ class PanierController implements ControllerProviderInterface
         $controllers->get('/', 'App\Controller\panierController::index')->bind('panier.index');
         $controllers->get('/show', 'App\Controller\panierController::show')->bind('panier.show');
 
-        $controllers->post('/add', 'App\Controller\panierController::add')->bind('panier.add');
-
+        $controllers->get('/add/{id}', 'App\Controller\panierController::add')->bind('panier.add')->assert('id', '\d+');;
+        $controllers->post('/add', 'App\Controller\panierController::validFormAdd')->bind('panier.validFormAdd');
 
         return $controllers;
     }
