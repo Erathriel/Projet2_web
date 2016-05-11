@@ -18,6 +18,7 @@ use Symfony\Component\Security;
 class PanierController implements ControllerProviderInterface
 {
     private $panierModel;
+    private $mangaModel;
 
     public function __construct()
     {
@@ -36,7 +37,7 @@ class PanierController implements ControllerProviderInterface
     }
 
     public function add(Application $app, Request $req){
-        $mangaModel = new MangaModel($app);
+        $this->mangaModel = new MangaModel($app);
         $this->panierModel = new PanierModel($app);
         $manga_id = $app->escape($req->get('id'));
         $user_id = $app['session']->get('user_id');

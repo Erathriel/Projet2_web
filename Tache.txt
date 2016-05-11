@@ -4,8 +4,7 @@ Fini :
     - Supprimer des mangas
     - Afficher le panier
     - Afficher les mangas
+    - Ajouter au panier ( avec quantité )
 
 A faire :
-    - Ajouter au panier ( avec quantité )
     - Supprimer du panier
-	

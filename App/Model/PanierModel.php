@@ -16,7 +16,7 @@ class PanierModel {
 
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('m.nom', 'p.quantite','p.prix','p.dateAjoutPanier')
+            ->select('m.id','m.nom', 'p.quantite','p.prix','p.dateAjoutPanier')
             ->from('paniers', 'p')
             ->innerJoin('p', 'mangas', 'm', 'p.manga_id=m.id')
             ->where('p.user_id = :user_id')
@@ -44,6 +44,19 @@ class PanierModel {
             ->setParameter('user_id', $user_id)
             ->setParameter('manga_id', $manga_id)
         ;
+        return $queryBuilder->execute();
+    }
+
+    public function deletePanier($manga_id, $user_id){
+        $queryBuilder = new QueryBuilder($this->db);
+        $queryBuilder
+            ->delete()
+            ->from('paniers')
+            ->where('panier.user_id =:id')
+            ->andWhere('panier.manga_id=:idManga')
+            ->setParameter('id',$user_id)
+            ->setParameter('idManga',$manga_id)
+            ;
         return $queryBuilder->execute();
     }
 
