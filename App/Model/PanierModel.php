@@ -50,12 +50,11 @@ class PanierModel {
     public function deletePanier($manga_id, $user_id){
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->delete()
-            ->from('paniers')
-            ->where('panier.user_id =:id')
-            ->andWhere('panier.manga_id=:idManga')
-            ->setParameter('id',$user_id)
-            ->setParameter('idManga',$manga_id)
+            ->delete('paniers')
+            ->where('user_id =:user_id')
+            ->andWhere('manga_id=:manga_id')
+            ->setParameter('user_id',$user_id)
+            ->setParameter('manga_id',$manga_id)
             ;
         return $queryBuilder->execute();
     }
@@ -63,7 +62,8 @@ class PanierModel {
     public function countMangaLigne($manga_id, $user_id){
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('count(manga_id)')->from('paniers')
+//            ->select('count(manga_id)')->from('paniers')
+            ->select('quantite')->from('paniers')
             -> where('manga_id = :manga_id')->andWhere('user_id = :user_id')
             ->andWhere('commande_id is Null')
             ->setParameter('manga_id',$manga_id)->setParameter('user_id', $user_id);
@@ -76,6 +76,19 @@ class PanierModel {
             ->setParameter('manga_id', $manga_id)->execute()->fetchColumn(0);
         $queryBuilder ->update('paniers')
             ->set('quantite','quantite+1')->set('prix',':prix')
+            ->where('manga_id = :manga_id')->andWhere('user_id = :user_id')
+            ->andWhere('commande_id is Null')
+            ->setParameter('prix',$prix)->setParameter('manga_id',$manga_id)
+            ->setParameter('user_id',$user_id);
+        return $queryBuilder->execute();
+    }
+
+    public function updateMangaLigneAddDec($manga_id, $user_id){
+        $queryBuilder = new QueryBuilder($this->db);
+        $prix = (float) $queryBuilder->select('prix')->from('mangas')->where('id=:manga_id')
+            ->setParameter('manga_id', $manga_id)->execute()->fetchColumn(0);
+        $queryBuilder ->update('paniers')
+            ->set('quantite','quantite-1')->set('prix',':prix')
             ->where('manga_id = :manga_id')->andWhere('user_id = :user_id')
             ->andWhere('commande_id is Null')
             ->setParameter('prix',$prix)->setParameter('manga_id',$manga_id)

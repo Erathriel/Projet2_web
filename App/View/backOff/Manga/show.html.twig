@@ -60,7 +60,7 @@
 						{% if panier is not null and panier is not empty %}
 							{% for element in panier %}
 								<tr>
-									<td>{{element.nom}}</td><td>{{element.quantite}}</td><td>{{ element.prix }}</td><td>{{element.dateAjoutPanier}}</td><td><a href="#">  Supprimer</a></td>
+									<td>{{element.nom}}</td><td>{{element.quantite}}</td><td>{{ element.prix }}</td><td>{{element.dateAjoutPanier}}</td><td><a href="{{ path('panier.delete', {id : element.id }) }}">Supprimer</a></td>
 								</tr>
 							{% endfor %}
 						{% endif %}
