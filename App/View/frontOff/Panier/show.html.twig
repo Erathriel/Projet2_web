@@ -18,7 +18,7 @@
 
 					{% for panier in data if data is not empty %}
 						<tr>
-							<td>{{panier.nom}}</td><td>{{panier.quantite}}</td><td>{{ panier.prix }}</td><td>{{panier.dateAjoutPanier}}</td><td><a href="{{ path('panier.add', {id: panier.id}) }}"> Ajouter</a><a href="#">  Supprimer</a></td>
+							<td>{{panier.nom}}</td><td>{{panier.quantite}}</td><td>{{ panier.prix }}</td><td>{{panier.dateAjoutPanier}}</td><td><a href="{{ path('panier.add', {id: panier.id}) }}"> Ajouter</a><a href="{{ path('panier.delete', {id : panier.id }) }}">  Supprimer</a></td>
 
 						</tr>
 					{% endfor %}
