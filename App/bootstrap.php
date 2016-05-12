@@ -57,6 +57,6 @@ $app->mount("/", new App\Controller\IndexController());
 $app->mount("/manga", new App\Controller\MangaController($app));
 $app->mount("/connexion", new App\Controller\UserController($app));
 $app->mount("/panier", new App\Controller\PanierController($app));
-
+$app->mount("/commande", new App\Controller\CommandeController($app));
 //On lance l'application
 $app->run();

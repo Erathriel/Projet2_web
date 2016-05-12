@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: geoffrey
- * Date: 22/04/16
- * Time: 11:22
- */
 
 namespace App\Model;
 
@@ -20,10 +14,10 @@ class CommandeModel {
     }
 
 
-    public function getAllCommandes($id) {
+    public function getCommandesClient($id) {
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
-            ->select('c.id', 'c.user_id', 'prix', 'date_achat', 'etat_id')
+            ->select('c.id', 'c.prix', 'c.date_achat', 'e.libelle')
             ->from('commandes', 'c')
             ->innerJoin('c', 'users', 'u', 'c.user_id=u.id')
             ->innerJoin('c', 'etats', 'e', 'c.etat_id=e.id')
@@ -32,4 +26,10 @@ class CommandeModel {
             ->setParameter('user_id', $id);
         return $queryBuilder->execute()->fetchAll();
     }
+
+    public function createCommande($user_id){
+
+    }
+
+
 }
