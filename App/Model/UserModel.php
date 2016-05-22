@@ -1,6 +1,7 @@
 <?php
 namespace App\Model;
 
+use Doctrine\DBAL\Query\QueryBuilder;
 use Silex\Application;
 
 class UserModel {
@@ -11,6 +12,16 @@ class UserModel {
 		$this->db = $app['db'];
 	}
 
+	public function getUsers($id){
+		$queryBuilder = new QueryBuilder($this->db);
+		$queryBuilder
+			->select('id','email','password','login','nom','code_postal','ville','adresse')
+			->from('users')
+			->where('id=:id')
+			->setParameter('id',$id);
+		return $queryBuilder->execute()->fetch();
+	}
+
 	public function verif_login_mdp_Utilisateur($login,$mdp){
 		$sql = "SELECT id, login,password,droit FROM users WHERE login = ? AND password = ?";
 		$res=$this->db->executeQuery($sql,[$login,$mdp]);   //md5($mdp);
@@ -19,4 +30,29 @@ class UserModel {
 		else
 			return false;
 	}
+
+	public function updateUser($donnees,$id) {
+		$queryBuilder = new QueryBuilder($this->db);
+		$queryBuilder
+				->update('users')
+				->set('login', '?')
+				->set('password','?')
+				->set('email','?')
+				->set('nom','?')
+				->set('code_postal','?')
+				->set('ville',' ?')
+				->set('adresse', '?')
+				->where('id= ?')
+				->setParameter(0, $donnees['login'])
+				->setParameter(1, $donnees['password'])
+				->setParameter(2, $donnees['email'])
+				->setParameter(3, $donnees['nom'])
+				->setParameter(4, $donnees['code_postal'])
+				->setParameter(5, $donnees['ville'])
+				->setParameter(6, $donnees['adresse'])
+				->setParameter(7, $id);
+
+		return $queryBuilder->execute();
+	}
+
 }
