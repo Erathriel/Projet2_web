@@ -20,7 +20,7 @@ use Symfony\Component\Security;
 class CommandeController implements ControllerProviderInterface{
 
     private $commandeModel;
-
+    private $panierModel;
 
     public function __construct()
     {
@@ -40,15 +40,23 @@ class CommandeController implements ControllerProviderInterface{
         return $app["twig"]->render('frontOff/Commandes/show.html.twig',['data'=>$commande]);
     }
 
+    public function add(Application $app){
+        $this->commandeModel = new CommandeModel($app);
+        
+        $user_id = $app['session']->get('user_id');
+        $commande = $this->commandeModel->createCommande($user_id);
+        return $app["twig"]->render('frontOff/Commandes/show.html.twig',['data'=>$commande]);
 
+    }
 
-
+    
     public function connect(Application $app) {  //http://silex.sensiolabs.org/doc/providers.html#controller-providers
         $controllers = $app['controllers_factory'];
 
         $controllers->get('/', 'App\Controller\commandeController::index')->bind('commande.index');
         $controllers->get('/show', 'App\Controller\commandeController::show')->bind('commande.show');
 
+        $controllers->get('/add', 'App\Controller\commandeController::add')->bind('commande.add');
 
         return $controllers;
     }

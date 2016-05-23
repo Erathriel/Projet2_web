@@ -51,22 +51,22 @@
 			</div>
 			<div class="column large-3 small-4">
 				{% if  app.session.get('droit') is defined and  app.session.get('droit') == 'DROITclient' %}
+				{% if panier is not null and panier is not empty %}
 					<table>
 						<caption> Mon Panier </caption>
 						<thead>
 						<tr><th>nom du manga</th><th>quantité </th><th>prix</th><th>date d'ajout</th><th> - </th>
 						</thead>
 						<tbody>
-						{% if panier is not null and panier is not empty %}
 							{% for element in panier %}
 								<tr>
 									<td>{{element.nom}}</td><td>{{element.quantite}}</td><td>{{ element.prix }}</td><td>{{element.dateAjoutPanier}}</td><td><a href="{{ path('panier.delete', {id : element.id }) }}">Supprimer</a></td>
 								</tr>
-							{% endfor %}
-						{% endif %}
-						</tbody>
-					</table>
-					<input type="submit" name="validerPanier" value="Valider votre commande" />
+								{% endfor %}
+							</tbody>
+						</table>
+						<a href="{{ url('commande.add') }}">valider commande</a>
+					{% endif %}
 				{% endif %}
 			</div>
 	</div>

@@ -24,7 +24,7 @@
 					{% endfor %}
 					</tbody>
 				</table>
-				<input type="submit" name="validerPanier" value="Valider votre commande" />
+				<a href="{{ url('commande.add') }}">valider commande</a>
 			</fieldset>
 			<a href="{{ url('manga.show') }}">Retour sur la page des ventes</a>
 		{% else %}
