@@ -21,6 +21,12 @@ class UserController implements ControllerProviderInterface {
 		return $app["twig"]->render('v_session_connexion.html.twig');
 	}
 
+	public function show(Application $app) {
+		$this->userModel = new UserModel($app);
+		$users=$this->userModel->getAllUser();
+		return $app["twig"]->render('backOff/User/show.html.twig',['data'=>$users]);
+	}
+
 	public function validFormConnexionUser(Application $app)
 	{
 
@@ -146,6 +152,7 @@ class UserController implements ControllerProviderInterface {
 		$controllers->get('/login', 'App\Controller\UserController::connexionUser')->bind('user.login');
 		$controllers->post('/login', 'App\Controller\UserController::validFormConnexionUser')->bind('user.validFormlogin');
 		$controllers->get('/logout', 'App\Controller\UserController::deconnexionSession')->bind('user.logout');
+		$controllers->get('/show', 'App\Controller\UserController::show')->bind('user.show');
 		$controllers->get('/add', 'App\Controller\UserController::add')->bind('user.add');
 		$controllers->post('/add', 'App\Controller\UserController::validFormAdd')->bind('user.validFormAdd');
 		$controllers->get('/edit', 'App\Controller\UserController::edit')->bind('user.edit')->bind('user.edit');

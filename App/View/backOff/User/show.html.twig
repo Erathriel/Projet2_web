@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+{% block contenu %}
+    <div class="row">
+        <div class="column large-9 small-4">
+            <table>
+                <caption> Compte de tout les utilisateurs </caption>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>login</th>
+                        <th>password</th>
+                        <th>nom</th>
+                        <th>email</th>
+                        <th>code_postal</th>
+                        <th>ville</th>
+                        <th>adresse</th>
+                        <th>valide</th>
+                        <th>droit</th>
+                        <th> - </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for user in data if data is not empty %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.login }}</td>
+                        <td>{{ user.password }}</td>
+                        <td>{{ user.nom }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.code_postal }}</td>
+                        <td>{{ user.ville }}</td>
+                        <td>{{ user.adresse }}</td>
+                        <td>{{ user.valide }}</td>
+                        <td>{{ user.droit }}</td>
+                        <td> Supprimer </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

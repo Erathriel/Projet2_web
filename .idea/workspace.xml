@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e5b5e4c-fcf1-4e2f-b9c0-8a06252acb61" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/View/frontOff/User/add.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/View/backOff/User/show.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controller/UserController.php" afterPath="$PROJECT_DIR$/App/Controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Model/CommandeModel.php" afterPath="$PROJECT_DIR$/App/Model/CommandeModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Model/MangaModel.php" afterPath="$PROJECT_DIR$/App/Model/MangaModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Model/UserModel.php" afterPath="$PROJECT_DIR$/App/Model/UserModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig" afterPath="$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/nav_backOff.html.twig" afterPath="$PROJECT_DIR$/App/View/nav_backOff.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/nav_home.html.twig" afterPath="$PROJECT_DIR$/App/View/nav_home.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/config.php" afterPath="$PROJECT_DIR$/App/config.php" />
     </list>
     <ignored path="Projet2_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +34,8 @@
           <file leaf-file-name="MangaController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/Controller/MangaController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-16.666666">
-                  <caret line="183" column="8" selection-start-line="183" selection-start-column="8" selection-end-line="184" selection-end-column="111" />
+                <state vertical-scroll-proportion="-16.041666">
+                  <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
                   <folding>
                     <element signature="e#33#55#0#PHP" expanded="true" />
                     <element signature="e#7222#7446#1#PHP" expanded="false" />
@@ -50,38 +47,38 @@
           <file leaf-file-name="MangaModel.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/Model/MangaModel.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.9166667">
-                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                <state vertical-scroll-proportion="-13.75">
+                  <caret line="23" column="52" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="52" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="S3projet2.sql" pinned="false" current-in-tab="true">
+          <file leaf-file-name="S3projet2.sql" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/S3projet2.sql">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.7762431">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="144" column="1" selection-start-line="144" selection-start-column="1" selection-end-line="144" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/App/View/frontOff/User/edit.html.twig">
+          <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-8.75">
-                  <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+                <state vertical-scroll-proportion="0.06428572">
+                  <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/add.html.twig">
+          <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="6.4583335">
-                  <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+                <state vertical-scroll-proportion="-22.5">
+                  <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -94,11 +91,21 @@
           <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/Controller/UserController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-42.98077">
-                  <caret line="149" column="93" selection-start-line="149" selection-start-column="93" selection-end-line="149" selection-end-column="93" />
+                <state vertical-scroll-proportion="-9.75">
+                  <caret line="154" column="55" selection-start-line="154" selection-start-column="55" selection-end-line="154" selection-end-column="55" />
                   <folding>
                     <element signature="e#33#57#0#PHP" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/App/View/backOff/User/show.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.7714286">
+                  <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -113,24 +120,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="UserModel.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="UserModel.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/Model/UserModel.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.62946427">
-                  <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+                <state vertical-scroll-proportion="-5.480769">
+                  <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
                   <folding>
-                    <marker date="1464115827428" expanded="true" signature="567:642" placeholder="SELECT id, l..users..." />
+                    <marker date="1464116438396" expanded="true" signature="860:935" placeholder="SELECT id, l..users..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.958333">
-                  <caret line="48" column="52" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="52" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -140,6 +137,16 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-14.375">
                   <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="nav_backOff.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/App/View/nav_backOff.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-15.625">
+                  <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
@@ -163,7 +170,6 @@
         <option value="$PROJECT_DIR$/S3projet2_v16_1.sql" />
         <option value="$PROJECT_DIR$/App/View/backOff/Manga/add.html.twig" />
         <option value="$PROJECT_DIR$/App/View/backOff/Panier/show.html.twig" />
-        <option value="$PROJECT_DIR$/App/Model/MangaModel.php" />
         <option value="$PROJECT_DIR$/App/View/backOff/Manga/delete.html.twig" />
         <option value="$PROJECT_DIR$/App/View/backOff/Manga/edit.html.twig" />
         <option value="$PROJECT_DIR$/App/Controller/MangaController.php" />
@@ -179,12 +185,14 @@
         <option value="$PROJECT_DIR$/App/Controller/CommandeController.php" />
         <option value="$PROJECT_DIR$/App/config.php" />
         <option value="$PROJECT_DIR$/App/Model/CommandeModel.php" />
-        <option value="$PROJECT_DIR$/App/View/nav_backOff.html.twig" />
         <option value="$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig" />
-        <option value="$PROJECT_DIR$/App/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/App/View/frontOff/User/add.html.twig" />
         <option value="$PROJECT_DIR$/App/View/nav_home.html.twig" />
+        <option value="$PROJECT_DIR$/App/Model/MangaModel.php" />
         <option value="$PROJECT_DIR$/App/Model/UserModel.php" />
+        <option value="$PROJECT_DIR$/App/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/App/View/nav_backOff.html.twig" />
+        <option value="$PROJECT_DIR$/App/View/backOff/User/show.html.twig" />
       </list>
     </option>
   </component>
@@ -374,6 +382,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Commandes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projet2_web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projet2_web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backOff" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="User" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -685,7 +719,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463949603560</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Inscription optimal !">
+      <created>1464115934667</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1464115934667</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -703,6 +743,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28608248" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -710,7 +751,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -743,7 +783,8 @@
     <MESSAGE value="ajouter fonctionne !" />
     <MESSAGE value="DELETE FONCTIONNE !" />
     <MESSAGE value="Modification des données personnelles fonction du coups je go regarder GoT" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modification des données personnelles fonction du coups je go regarder GoT" />
+    <MESSAGE value="Inscription optimal !" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inscription optimal !" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -752,16 +793,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/App/Controller/PanierController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#33#55#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Model/PanierModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -795,7 +826,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="5" />
           <folding>
-            <marker date="1464115827428" expanded="true" signature="567:642" placeholder="SELECT id, l..users..." />
+            <marker date="1464116438396" expanded="true" signature="860:935" placeholder="SELECT id, l..users..." />
           </folding>
         </state>
       </provider>
@@ -913,7 +944,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="5" />
           <folding>
-            <marker date="1464115827428" expanded="true" signature="567:642" placeholder="SELECT id, l..users..." />
+            <marker date="1464116438396" expanded="true" signature="860:935" placeholder="SELECT id, l..users..." />
           </folding>
         </state>
       </provider>
@@ -998,22 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
-          <caret line="20" column="254" selection-start-line="20" selection-start-column="254" selection-end-line="20" selection-end-column="254" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/nav_backOff.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23571429">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Controller/PanierController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.625">
@@ -1075,52 +1090,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Model/MangaModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.9166667">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/View/frontOff/User/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.75">
           <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-42.98077">
-          <caret line="149" column="93" selection-start-line="149" selection-start-column="93" selection-end-line="149" selection-end-column="93" />
-          <folding>
-            <element signature="e#33#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.958333">
-          <caret line="48" column="52" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/frontOff/User/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.875">
-          <caret line="43" column="102" selection-start-line="43" selection-start-column="102" selection-end-line="43" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/View/nav_home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375">
-          <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -1141,20 +1114,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controller/MangaController.php">
+    <entry file="file://$PROJECT_DIR$/App/Model/MangaModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.666666">
-          <caret line="183" column="8" selection-start-line="183" selection-start-column="8" selection-end-line="184" selection-end-column="111" />
-          <folding>
-            <element signature="e#33#55#0#PHP" expanded="true" />
-            <element signature="e#7222#7446#1#PHP" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/frontOff/Panier/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.5">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/S3projet2.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7762431">
+        <state vertical-scroll-proportion="0.0">
           <caret line="144" column="1" selection-start-line="144" selection-start-column="1" selection-end-line="144" selection-end-column="1" />
           <folding />
         </state>
@@ -1162,11 +1140,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/Model/UserModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62946427">
-          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+        <state vertical-scroll-proportion="-5.480769">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
           <folding>
-            <marker date="1464115827428" expanded="true" signature="567:642" placeholder="SELECT id, l..users..." />
+            <marker date="1464116438396" expanded="true" signature="860:935" placeholder="SELECT id, l..users..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controller/MangaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.041666">
+          <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+          <folding>
+            <element signature="e#33#55#0#PHP" expanded="true" />
+            <element signature="e#7222#7446#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06428572">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.75">
+          <caret line="154" column="55" selection-start-line="154" selection-start-column="55" selection-end-line="154" selection-end-column="55" />
+          <folding>
+            <element signature="e#33#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/nav_backOff.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/nav_home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.375">
+          <caret line="23" column="65" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/frontOff/User/add.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.875">
+          <caret line="43" column="102" selection-start-line="43" selection-start-column="102" selection-end-line="43" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/View/backOff/User/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7714286">
+          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

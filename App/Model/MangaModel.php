@@ -14,7 +14,6 @@ class MangaModel {
     }
     // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/query-builder.html#join-clauses
     public function getAllMangas() {
-
         $queryBuilder = new QueryBuilder($this->db);
         $queryBuilder
             ->select('m.id', 't.libelle', 'm.nom','m.nbEpisode', 'm.prix', 'm.photo', 'm.dispo', 'm.stock')

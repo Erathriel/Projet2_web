@@ -12,6 +12,15 @@ class UserModel {
 		$this->db = $app['db'];
 	}
 
+	public function getAllUser(){
+		$queryBuilder = new QueryBuilder($this->db);
+		$queryBuilder
+				->select('id','login','password','email','nom','code_postal','ville','adresse','valide','droit')
+				->from('users')
+				->orderBy('id','ASC');
+		return $queryBuilder->execute()->fetchAll();
+	}
+
 	public function getUsers($id){
 		$queryBuilder = new QueryBuilder($this->db);
 		$queryBuilder
