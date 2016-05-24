@@ -52,6 +52,47 @@ class UserController implements ControllerProviderInterface {
 		return $app->redirect($app["url_generator"]->generate("manga.index"));
 	}
 
+	public function add(Application $app) {
+		$this->userModel = new UserModel($app);
+		return $app["twig"]->render('frontOff/User/add.html.twig',['path'=>BASE_URL]);
+		return "add User";
+	}
+
+	public function validFormAdd(Application $app, Request $req) {
+		// var_dump($app['request']->attributes);
+		if (isset($_POST['login']) && isset($_POST['password']) and isset($_POST['email']) and isset($_POST['nom']) and isset($_POST['code_postal']) and isset($_POST['ville']) and isset($_POST['adresse'])) {
+			$donnees = [
+					'login'=>htmlspecialchars($_POST['login']),
+					'password'=>htmlspecialchars($_POST['password']),
+					'email'=>htmlspecialchars($_POST['email']),
+					'nom'=>htmlspecialchars($_POST['nom']),
+					'code_postal'=>htmlspecialchars($_POST['code_postal']),
+					'ville'=>htmlspecialchars($_POST['ville']),
+					'adresse'=>htmlspecialchars($_POST['adresse'])
+			];
+			if ((! preg_match("/^[A-Za-z0-9]{2,}/",$donnees['login']))) $erreurs['login']='login composé de 2 lettres minimum';
+			if ((! preg_match("/^[A-Za-z0-9]{2,}/",$donnees['password']))) $erreurs['password']='mot de passe composé de 2 lettres minimum';
+			if ((! preg_match('#^([\w\.-]+)@([\w\.-]+)(\.[a-z]{2,4})$#',$donnees['email']))) $erreurs['email']='email incorrect';
+			if ((! preg_match("/^[A-Za-z0-9]{2,}/",$donnees['nom']))) $erreurs['nom']='nom composé de 2 lettres minimum';
+			if ((! preg_match("/^[0-9]{5,}/",$donnees['code_postal']))) $erreurs['code_postal']='code postal incorrect';
+			if ((! preg_match("/^[A-Za-z0-9]{2,}/",$donnees['ville']))) $erreurs['ville']='ville inconnu';
+			if ((! preg_match("/^[A-Za-z0-9]{2,}/",$donnees['adresse']))) $erreurs['adresse']='adresse incorrect';
+			if (! empty($erreurs)) {
+				$this->userModel = new UserModel($app);
+				return $app["twig"]->render('frontOff/User/add.html.twig',['donnees'=>$donnees,'erreurs'=>$erreurs]);
+			}
+			else
+			{
+				$this->userModel = new UserModel($app);
+				$this->userModel->insertUser($donnees);
+				return $app->redirect($app["url_generator"]->generate("manga.index"));
+			}
+		}
+		else
+			return $app->abort(404, 'error Pb data form Add');
+
+	}
+
 	public function edit(Application $app){
 		$this->userModel = new UserModel($app);
 		$user_id = $app['session']->get('user_id');
@@ -105,6 +146,8 @@ class UserController implements ControllerProviderInterface {
 		$controllers->get('/login', 'App\Controller\UserController::connexionUser')->bind('user.login');
 		$controllers->post('/login', 'App\Controller\UserController::validFormConnexionUser')->bind('user.validFormlogin');
 		$controllers->get('/logout', 'App\Controller\UserController::deconnexionSession')->bind('user.logout');
+		$controllers->get('/add', 'App\Controller\UserController::add')->bind('user.add');
+		$controllers->post('/add', 'App\Controller\UserController::validFormAdd')->bind('user.validFormAdd');
 		$controllers->get('/edit', 'App\Controller\UserController::edit')->bind('user.edit')->bind('user.edit');
 		$controllers->put('/edit', 'App\Controller\UserController::validFormEdit')->bind('user.validFormEdit');
 		return $controllers;

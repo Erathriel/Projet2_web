@@ -1,0 +1,53 @@
+{% extends "layout.html.twig" %}
+{% block contenu %}
+    <form method="post" action="{{ path('user.validFormAdd') }}">
+        <div class="row">
+            <fieldset>
+                <legend> Creer mon compte </legend>
+                <label>login :
+                    <input name="login"  type="text"  size="18" value="{{donnees.login|default('')}}" />
+                    {% if erreurs.login is defined %}
+                        <small class="error">{{erreurs.login}}</small>
+                    {% endif %}
+                </label>
+                <label>mot de passe :
+                    <input name="password"  type="text"  size="18" value="{{donnees.password|default('')}}" />
+                    {% if erreurs.password is defined %}
+                        <small class="error">{{erreurs.password}}</small>
+                    {% endif %}
+                </label>
+                <label>email :
+                    <input name="email"  type="text"  size="18" value="{{donnees.email|default('')}}" />
+                    {% if erreurs.email is defined %}
+                        <small class="error">{{erreurs.email}}</small>
+                    {% endif %}
+                </label>
+                <label>nom :
+                    <input name="nom"  type="text"  size="18" value="{{donnees.nom|default('')}}" />
+                    {% if erreurs.nom is defined %}
+                        <small class="error">{{erreurs.nom}}</small>
+                    {% endif %}
+                </label>
+                <label>code postal :
+                    <input name="code_postal"  type="text"  size="18" value="{{donnees.code_postal|default('')}}" />
+                    {% if erreurs.code_postal is defined %}
+                        <small class="error">{{erreurs.code_postal}}</small>
+                    {% endif %}
+                </label>
+                <label>ville :
+                    <input name="ville"  type="text"  size="18" value="{{donnees.ville|default('')}}" />
+                    {% if erreurs.ville is defined %}
+                        <small class="error">{{erreurs.ville}}</small>
+                    {% endif %}
+                </label>
+                <label>adresse :
+                    <input name="adresse"  type="text"  size="18" value="{{donnees.adresse|default('')}}" />
+                    {% if erreurs.adresse is defined %}
+                        <small class="error">{{erreurs.adresse}}</small>
+                    {% endif %}
+                </label>
+                <input type="submit" name="creerManga" value="créer" />
+            </fieldset>
+        </div>
+    </form>
+{% endblock %}

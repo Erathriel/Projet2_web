@@ -2,9 +2,6 @@
 {% block contenu %}
 	<div class="row align-center">
 			<div class="column large-9 small-4">
-				{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
-					<a href="{{ path('manga.add') }}"> Ajouter un manga </a>
-				{% endif %}
 				<table>
 					<caption>Recapitulatifs des mangas (avec twig)</caption>
 					<thead>
@@ -48,6 +45,9 @@
 					{% endfor %}
 					<tbody>
 				</table>
+				{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
+					<a href="{{ path('manga.add') }}"> Ajouter un manga </a>
+				{% endif %}
 			</div>
 			<div class="column large-3 small-4">
 				{% if  app.session.get('droit') is defined and  app.session.get('droit') == 'DROITclient' %}
