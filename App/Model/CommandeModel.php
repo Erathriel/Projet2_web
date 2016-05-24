@@ -31,16 +31,9 @@ class CommandeModel {
 
     public function createCommande($user_id){
         $conn=$this->db;
-        
-        $conn->beginTransaction();
-        $requestSQL=$conn->prepare('select prix from commandes where user_id = :idUser and commande_id is null');
-        $requestSQL->execute(['idUser'=>$user_id]);
-        //$prix=$requestSQL->fetch()['prix'];
-        $conn->commit();
-
         $conn->beginTransaction();
         $requestSQL=$conn->prepare('insert into commandes(user_id,prix,etat_id) values (?,?,?)');
-        $requestSQL->execute([$user_id,$prix,1]);
+        $requestSQL->execute([$user_id,0,1]);
         $lastInsertid=$conn->lastInsertId();
         $requestSQL=$conn->prepare('update paniers set commande_id=? where user_id=? and commande_id is null');
         $requestSQL->execute([$lastInsertid,$user_id]);
