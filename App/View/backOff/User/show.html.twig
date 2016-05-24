@@ -32,7 +32,7 @@
                         <td>{{ user.adresse }}</td>
                         <td>{{ user.valide }}</td>
                         <td>{{ user.droit }}</td>
-                        <td> Supprimer </td>
+                        <td> <a href="{{ path('user.delete', {id : user.id }) }}">Supprimer</a> </td>
                     </tr>
                 {% endfor %}
                 </tbody>

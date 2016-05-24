@@ -49,8 +49,6 @@ class PanierController implements ControllerProviderInterface
         }
         return $app->redirect($app["url_generator"]->generate("manga.index"));
         return "add Panier";
-
-
     }
 
     public function delete(Application $app,Request $req){

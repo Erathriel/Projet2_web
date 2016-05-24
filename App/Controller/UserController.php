@@ -146,6 +146,15 @@ class UserController implements ControllerProviderInterface {
 		}
 	}
 
+	public function delete(Application $app, Request $req){
+		$id = $app->escape($req->get('id'));
+		$this->userModel = new UserModel($app);
+		$this->userModel->deleteUser($id);
+		return $app->redirect($app["url_generator"]->generate("user.show"));
+		return "delete User";
+	}
+
+
 	public function connect(Application $app) {
 		$controllers = $app['controllers_factory'];
 		$controllers->match('/', 'App\Controller\UserController::index')->bind('user.index');
@@ -157,6 +166,7 @@ class UserController implements ControllerProviderInterface {
 		$controllers->post('/add', 'App\Controller\UserController::validFormAdd')->bind('user.validFormAdd');
 		$controllers->get('/edit', 'App\Controller\UserController::edit')->bind('user.edit')->bind('user.edit');
 		$controllers->put('/edit', 'App\Controller\UserController::validFormEdit')->bind('user.validFormEdit');
+		$controllers->get('/delete/{id}', 'App\Controller\UserController::delete')->bind('user.delete')->assert('id', '\d+');
 		return $controllers;
 	}
 }
