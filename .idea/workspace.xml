@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2e5b5e4c-fcf1-4e2f-b9c0-8a06252acb61" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controller/PanierController.php" afterPath="$PROJECT_DIR$/App/Controller/PanierController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controller/UserController.php" afterPath="$PROJECT_DIR$/App/Controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Model/UserModel.php" afterPath="$PROJECT_DIR$/App/Model/UserModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/View/backOff/User/show.html.twig" afterPath="$PROJECT_DIR$/App/View/backOff/User/show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Model/MangaModel.php" afterPath="$PROJECT_DIR$/App/Model/MangaModel.php" />
     </list>
     <ignored path="Projet2_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,21 +70,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="MangaModel.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="MangaModel.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/App/Model/MangaModel.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="14.625">
-                  <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+                <state vertical-scroll-proportion="0.51428574">
+                  <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PanierController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="PanierController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/App/Controller/PanierController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8485714">
-                  <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="129" />
+                <state vertical-scroll-proportion="-25.375">
+                  <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -186,12 +183,12 @@
         <option value="$PROJECT_DIR$/App/View/backOff/Manga/show.html.twig" />
         <option value="$PROJECT_DIR$/App/View/frontOff/User/add.html.twig" />
         <option value="$PROJECT_DIR$/App/View/nav_home.html.twig" />
-        <option value="$PROJECT_DIR$/App/Model/MangaModel.php" />
         <option value="$PROJECT_DIR$/App/View/nav_backOff.html.twig" />
         <option value="$PROJECT_DIR$/App/Controller/PanierController.php" />
         <option value="$PROJECT_DIR$/App/Model/UserModel.php" />
         <option value="$PROJECT_DIR$/App/View/backOff/User/show.html.twig" />
         <option value="$PROJECT_DIR$/App/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/App/Model/MangaModel.php" />
       </list>
     </option>
   </component>
@@ -730,7 +727,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464117993539</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Suppression d'un compte en étant admin !">
+      <created>1464122083578</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1464122083578</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -790,7 +793,8 @@
     <MESSAGE value="Modification des données personnelles fonction du coups je go regarder GoT" />
     <MESSAGE value="Inscription optimal !" />
     <MESSAGE value="Vu de tout les compte en tant qu'Admin !" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vu de tout les compte en tant qu'Admin !" />
+    <MESSAGE value="Suppression d'un compte en étant admin !" />
+    <option name="LAST_COMMIT_MESSAGE" value="Suppression d'un compte en étant admin !" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1135,14 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Model/MangaModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="14.625">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Model/UserModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.038462">
@@ -1196,14 +1192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controller/PanierController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8485714">
-          <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="129" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.79910713">
@@ -1211,6 +1199,22 @@
           <folding>
             <element signature="e#33#57#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controller/PanierController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.375">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Model/MangaModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51428574">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
