@@ -5,6 +5,13 @@ Fini :
     - Afficher le panier
     - Afficher les mangas
     - Ajouter au panier ( avec quantité )
+    - Supprimer du panier ( avec quantité )
+    - Inscription
+    - Modification donnée personnel
+    - Suppression d'un compte client
+    - Visibilité des commandes coté client et admin
 
 A faire :
-    - Supprimer du panier
+    - Modifier états d'une commandes
+    - Afficher le détails
+    - Afficher les commandes traité séparéments des autres
