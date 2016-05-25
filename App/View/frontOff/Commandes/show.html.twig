@@ -22,9 +22,9 @@
                     </tbody>
                 </table>
 
-            <a href="{{ url('manga.show') }}">Retour sur la page des ventes</a>
+            <a href="{{ url('manga.show') }}"><input type="submit" name="retourManga" value="Retour sur la page des ventes" /></a>
         {% else %}
-            <p>Pas de commandes <a href="{{ url('manga.show') }}">Retour sur la page des ventes</a></p>
+            <p>Pas de commandes <a href="{{ url('manga.show') }}"><input type="submit" name="retourManga" value="Retour sur la page des ventes" /></a></p>
         {% endif %}
 
     </div>

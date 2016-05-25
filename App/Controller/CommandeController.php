@@ -40,6 +40,13 @@ class CommandeController implements ControllerProviderInterface{
         return $app["twig"]->render('frontOff/Commandes/show.html.twig',['data'=>$commande]);
     }
 
+    public function showAdmin(Application $app){
+        $this->commandeModel = new CommandeModel($app);
+        $user_id = $app['session']->get('user_id');
+        $commande = $this->commandeModel->getAllCommandesClient();
+        return $app["twig"]->render('backOff/Commandes/showAdmin.html.twig',['data'=>$commande]);
+    }
+
     public function add(Application $app){
         $this->commandeModel = new CommandeModel($app);
         
@@ -55,6 +62,7 @@ class CommandeController implements ControllerProviderInterface{
 
         $controllers->get('/', 'App\Controller\commandeController::index')->bind('commande.index');
         $controllers->get('/show', 'App\Controller\commandeController::show')->bind('commande.show');
+        $controllers->get('/showAdmin', 'App\Controller\commandeController::showAdmin')->bind('commande.showAdmin');
 
         $controllers->get('/add', 'App\Controller\commandeController::add')->bind('commande.add');
 

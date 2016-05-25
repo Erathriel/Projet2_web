@@ -26,9 +26,9 @@
 				</table>
 				<a href="{{ url('commande.add') }}"><input type="submit" name="validerPanier" value="Valider" /></a>
 			</fieldset>
-			<a href="{{ url('manga.show') }}">Retour sur la page des ventes</a>
+			<a href="{{ url('manga.show') }}"><input type="submit" name="retourManga" value="Retour sur la page des ventes" /></a>
 		{% else %}
-			<p>Votre panier est vide. <a href="{{ url('manga.show') }}">Retour sur la page des ventes</a></p>
+			<p>Votre panier est vide. <a href="{{ url('manga.show') }}"><input type="submit" name="retourManga" value="Retour sur la page des ventes" /></a></p>
 		{% endif %}
 
 	</div>
