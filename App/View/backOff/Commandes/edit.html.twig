@@ -1,0 +1,30 @@
+{% extends "layout.html.twig" %}
+{% block contenu %}
+    <form method="post" action="{{ path('commande.validFormEdit') }}">
+        <div class="row">
+            <fieldset>
+                <legend> Changer l'état de la commande </legend>
+                <input name="id"  type="hidden" value="{{donnees.id}}" />
+                <label> id utilisateur : {{ donnees.user_id }}</label>
+                <label> prix : {{ donnees.prix }} </label>
+                <label> date de l'achat : {{ donnees.date_achat }} </label>
+                <label> état de la commande :
+                    <select name="etat_id">
+                        {% for etat in etats %}
+                            <option value="{{ etat.id }}"
+                                    {% if donnees.etat_id is defined and etat.id == donnees.etat_id %} selected {% endif %}>
+                                {{ etat.libelle }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {% if erreurs.etat_id is defined %}
+                        <small class="error">{{erreurs.etat_id}}</small>
+                    {% endif %}
+                </label>
+                <input type="hidden" id="_method" name="_method" value="put" />
+
+                <input type="submit" name="modifierManga" value="Modifier" />
+            </fieldset>
+        </div>
+    </form>
+{% endblock %}

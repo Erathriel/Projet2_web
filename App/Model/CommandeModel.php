@@ -15,6 +15,15 @@ class CommandeModel {
         $this->panierModel = new PanierModel($app);
     }
 
+    public function getCommande($id){
+        $queryBuilder = new QueryBuilder($this->db);
+        $queryBuilder
+            ->select('id','user_id','prix','date_achat','etat_id')
+            ->from('commandes')
+            ->where('id=:id')
+            ->setParameter('id',$id);
+        return $queryBuilder->execute()->fetch();
+    }
 
     public function getCommandesClient($id) {
         $queryBuilder = new QueryBuilder($this->db);
@@ -54,7 +63,16 @@ class CommandeModel {
         return $queryBuilder->execute()->fetchAll();
     }
 
-
+    public function updateEtat($donnees){
+        $queryBuilder = new QueryBuilder($this->db);
+        $queryBuilder
+            ->update('commandes')
+            ->set('etat_id', '?')
+            ->where('id = ?')
+            ->setParameter(0,$donnees['etat_id'])
+            ->setParameter(1,$donnees['id']);
+        return $queryBuilder->execute();
+    }
 
     public function createCommande($user_id){
         $conn=$this->db;
