@@ -46,7 +46,7 @@
 					<tbody>
 				</table>
 				{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
-					<a href="{{ path('manga.add') }}"> Ajouter un manga </a>
+					<a href="{{ path('manga.add') }}"><input type="submit" name="formCreerManga" value="Ajouter un manga" /></a>
 				{% endif %}
 			</div>
 			<div class="column large-3 small-4">

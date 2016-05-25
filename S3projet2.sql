@@ -132,8 +132,8 @@ CREATE TABLE IF NOT EXISTS paniers (
 ) DEFAULT CHARSET=utf8 ;
 
 INSERT INTO paniers (id, quantite, prix, user_id, manga_id, commande_id) VALUES
-(1,'1','40',3,1,Null),
-(2,'1','10',4,2,1);
+(1,'1','40',3,1,1),
+(2,'1','10',4,2,2);
 
 /****************************************
 *
