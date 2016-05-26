@@ -3,7 +3,7 @@
 	<div class="row align-center">
 			<div class="column large-9 small-4">
 				<table>
-					<caption>Recapitulatifs des mangas (avec twig)</caption>
+					<caption>Recapitulatifs des mangas </caption>
 					<thead>
 					<tr><th>Nom</th><th>Id</th><th>Nombre d'épisode</th><th>Type</th><th>Prix</th><th>Photo</th><th>Dispo</th>
 						{% if   app.session.get('droit') is defined and  app.session.get('droit') == 'DROITadmin' %}
