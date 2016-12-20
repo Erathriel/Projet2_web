@@ -1,5 +1,5 @@
 # Projet2_web
-# Ne pas oubliet le : git clone ( Pour créer le dossier )
+# Ne pas oublier le : git clone ( Pour créer le dossier )
 # Les commandes suivantes sont à utiliser le dossier lui même.
 # Méthode pour ajouter les modifications au projet : 
 #	1 - git pull ( Pour récuperer les éventuelles modifications faites par les autres à toujours faire avant un commit ! )
